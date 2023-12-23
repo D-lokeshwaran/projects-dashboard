@@ -1,0 +1,42 @@
+/* DB left Menu */
+.dashboard_leftMenu {
+    width: calc(100% - 80%);
+    text-decoration: uppercase;
+    background-color: #121212c4;
+    color: white;
+}
+/* Header styles */
+.header_logo {
+    padding: 10px;
+    display: flex;
+}
+
+/* nav Links styles */
+.leftMenu_navLinks {
+    margin: 30px 0px;
+}
+.navBar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 0px;
+    border-radius: 4px;
+}
+.navBar_hover:hover {
+    background-color: #6faf6f;
+    color: black;
+}
+.selectedNavBar {
+    background-color: #39af39;
+    color: black;
+}
+.navBar {
+    padding: 8px;
+}
+.navBar_name {
+    margin-left: 12px;
+}
+.overrideLink {
+    color: currentColor; /*this currentColor is a variable which contains current clr value...*/
+    text-decoration: none;
+}

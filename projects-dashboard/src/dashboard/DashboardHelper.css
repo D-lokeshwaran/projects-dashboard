@@ -1,0 +1,129 @@
+:root {
+    --primary_color: black;
+    --search_bar_color: #f1f1f1;
+}
+
+.dashboard {
+    height: 100vh;
+    display: flex;
+}
+
+/* Routes Outlet */
+.dashboard_router {
+    width: 100%;
+    background: linear-gradient(to bottom,
+            #d7d7d7eb, transparent);
+}
+
+/* Helper Styles, Be aware if u change this
+   Note: all the css are ends with H to indicate this style
+         comes from DB helper.css
+   Star: &#11088;
+*/
+.containerH {
+    padding: .6vmin;
+    padding-top: 10px;
+}
+.pFiveH {
+    padding: 5px;
+}
+.ptenH {
+    padding: 10px;
+}
+.pOneFiveH {
+    padding: 15px;
+}
+.textSmallGreyH {
+    font-size: small;
+    padding-left: 4px;
+    color: #5c5c5c;
+}
+
+/* Margin Relate styles */
+.ml5H{
+    margin-left: 5px;
+}
+.ml10H {
+    margin-left: 10px;
+}
+.ml20H {
+    margin-left: 20px;
+}
+.mr10H {
+    margin-right: 10px;
+}
+.mr20H {
+    margin-right: 20px;
+}
+.forceFlexH {
+    display: flex !important;
+}
+.flexAlignCenterH {
+    display: flex !important;
+    align-items: center;
+}
+.tableRowH {
+    display: table-row;
+}
+.tableCellH {
+    display: table-cell
+}
+.customInputH {
+    border:none;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+.overrideInputH:focus {
+    outline: none
+}
+.userSelectNoneH {
+    user-select: none;
+}
+.trans3sH {
+    transition: .3s;
+}
+
+/* Button Actions style*/
+.actionSuccessH {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #04AA6D;
+    cursor: pointer;
+    transition: .2s;
+    border: none;
+    min-width: 100px;
+}
+.actionSuccessH:hover {
+    background-color: #0b753a;
+}
+/* text related styles */
+.textBottomH {
+    vertical-align: bottom;
+}
+.textHoverUnderlineH:hover {
+    text-decoration: underline;
+}
+.textSmallBold {
+    font-size: small;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+/* Icons Actions */
+.iconActionH {
+    transition: .3s;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.iconActionH:hover {
+    background-color: grey;
+    border: 1px solid white;
+}
+.icon {
+    display: table-cell;
+}
+
+/* others */

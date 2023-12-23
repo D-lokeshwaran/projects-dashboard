@@ -1,0 +1,7 @@
+.header_container {
+    display: flex;
+    justify-content: space-between;
+}
+.user_profile {
+    border: 1px solid black;
+}

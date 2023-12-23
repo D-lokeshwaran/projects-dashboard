@@ -1,0 +1,52 @@
+:root {
+    --slide_false_color: #ccc;
+    --slide_true_color: black;
+}
+.container {
+    padding: 5px;
+}
+.switch {
+    height: 22px;
+    width: 44px;
+    display: inline-block;
+    position: relative;
+}
+.switch input {
+    display: none;
+}
+.slider {
+    background-color: var(--slide_false_color);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    position: absolute;
+    transition: .4s;
+}
+.slider:before {
+    background-color: #fff;
+    transition: .4s;
+    content: "";
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+}
+
+input:checked + .slider {
+    background-color: var(--slide_true_color);
+}
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.container:hover {
+    /* need to implete hover for switch contaner and others */
+}
