@@ -1,0 +1,31 @@
+.dialog_container:active .dialog {
+    /* need to implement box width inc dec animation*/
+}
+.bg_blur {
+    z-index: 10;
+    opacity: .4;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #CCC;
+}
+.dialog_container_blur:active .dialog {
+    background-color: green;
+}
+.dialog {
+    z-index: 11;
+    position: fixed;
+    width: fit-content;
+    background-color: white;
+    border: 1px solid orange;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40%;
+}
+.dialog_header {
+    display: flex;
+    justify-content: space-between;
+}

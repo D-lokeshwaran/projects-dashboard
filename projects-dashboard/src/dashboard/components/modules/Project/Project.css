@@ -19,7 +19,7 @@
 
 /* Collection of projects styles */
 .collection {
-    margin-top: 30px;
+    margin-top: 15px;
 }
 .list_header {
     width: 100%;
@@ -27,7 +27,7 @@
 .list_header > th {
     font-size: small;
     text-align: left;
-    padding: 10px 0px;
+    padding-top: 10px;
 }
 /* List Row Related Styles */
 .data_container {

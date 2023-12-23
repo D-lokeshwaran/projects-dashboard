@@ -16,21 +16,29 @@ DropDown.defaultProps = {
  */
 export default function DropDown({ name, contents, onHover, className }) {
 
-    const[clicked, setClicked] = useState(false);
+    const[dropdown, setDropdown] = useState(false);
+
+    const onHoverAndSet = (value) => {
+        if(onHover === true) {
+            setDropdown(value)
+        }
+    }
 
     return (
         <div className="flexAlignCenterH ml10H">
             { name && <small className={`${className}`}><b>{name}</b></small> }
-            <div className={`${onHover && 'dropdown_hover'}`} style={{zIndex: '2'}}>
-                <div className="forceFlexH selected_dropdown" onClick={() => setClicked(!clicked)}>
+            <div className={`${onHover && 'dropdown_hover'}`} style={{zIndex: '2'}}
+                 onMouseOver={() => onHoverAndSet(true)}
+                 onMouseOut={() => onHoverAndSet(false)}>
+                <div className="forceFlexH selected_dropdown" onClick={() => setDropdown(onHover ? dropdown : !dropdown)}>
                     <span className="selected_dropdown_box">{contents[0]}</span>
                     <BsChevronDown size="18" className="icon"/>
                 </div>
-                <div className={`dropdownContents ${!onHover && clicked && 'inlineBlock'}`}>
+                <div className={`dropdownContents ${dropdown == true && 'inlineBlock'}`}>
                     {
                         contents.map(content =>
                             <div className="dropdownContent"
-                                 onClick={() => setClicked(false)}>{content}</div>)
+                                 onClick={() => setDropdown(false)}>{content}</div>)
                     }
                 </div>
             </div>
