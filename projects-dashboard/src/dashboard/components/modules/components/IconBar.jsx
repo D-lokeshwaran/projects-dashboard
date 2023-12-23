@@ -1,16 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function IconBar({name, beforeSelected, afterSelected, className}) {
+IconBar.defaultProps = {
+    sideEffort: true,
+    checked: false
+}
 
-    const[isSelected, setSelected] = useState(false);
+export default function IconBar({name, beforeSelected, afterSelected,
+        className, title, sideEffort, checked}) {
+
+    const[isSelected, setSelected] = useState(checked);
+
+    useEffect(() => { // this useEffect is very effective to update the metadata from parent component...
+        setSelected(checked);
+    }, [checked]);
 
     const toggleSelected = () => {
         setSelected(!isSelected);
     }
 
     return(
-        <div className={`iconActionH ml5H ${className}`} onClick={toggleSelected}
-             title="Filter by Archived">
+        <div className={`${sideEffort === true && 'iconActionH'} inlineBlockH ml5H ${className}`} onClick={toggleSelected}
+             title="Filter by Archived" title={title}>
             <button className="customInputH mrlt2H">{ isSelected ? afterSelected : beforeSelected }</button>
         </div>
     )

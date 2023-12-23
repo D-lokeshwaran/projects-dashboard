@@ -1,7 +1,6 @@
 /* DB left Menu */
 :root {
     --left_menu_bg_color: #121212c4;
-    --primary_color: #80e580;
 }
 
 .dashboard_leftMenu {
@@ -32,7 +31,7 @@
     color: black;
 }
 .selectedNavBar {
-    background-color: #80e580;
+    background-color: var(--primary_color);
     color: black;
 }
 .navBar {

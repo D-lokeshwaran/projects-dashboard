@@ -18,9 +18,9 @@
     cursor: pointer;
 }
 .dropdown_hover:hover .dropdownContents {
-    display: inline-block;
+    display: inline;
 }
-.dropdown_hover:active .dropdownContent {
+.dropdown_hover:active .dropdownContents {
     display: none;
 }
 .dropdownContent:hover {

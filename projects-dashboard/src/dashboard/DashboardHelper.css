@@ -1,5 +1,6 @@
 :root {
-    --primary_color: black;
+    --primary_color: #80e580;
+    --primary_color_hover: #6fb86f;
     --search_bar_color: #f1f1f1;
 }
 
@@ -77,7 +78,7 @@
 .tableCellH {
     display: table-cell
 }
-.customInputH {
+.customInputH, overrideInputH {
     border:none;
     background: transparent;
     padding: 5px;
@@ -92,20 +93,23 @@
 .trans3sH {
     transition: .3s;
 }
+.inlineBlockH {
+    display: inline-block;
+}
 
 /* Button Actions style*/
 .actionSuccessH {
     padding: 10px;
     border-radius: 5px;
-    color: white;
-    background-color: #04AA6D;
+    color: black;
+    background-color: var(--primary_color);
     cursor: pointer;
     transition: .2s;
-    border: none;
+    border: 1px solid black;
     min-width: 100px;
 }
 .actionSuccessH:hover {
-    background-color: #0b753a;
+    background-color: var(--primary_color_hover);
 }
 /* text related styles */
 .textBottomH {
@@ -143,3 +147,6 @@
 }
 
 /* others */
+.pointerNone {
+    pointer-events: none;
+}
