@@ -1,6 +1,6 @@
 import { Routes, Route,
          Navigate, Link} from 'react-router-dom'
-import { Home, Project, Visualization } from './pages'
+import { Home, Project, Visualization } from './modules'
 import Header from './Header/Header'
 
 export default function DashboardRoutes() {

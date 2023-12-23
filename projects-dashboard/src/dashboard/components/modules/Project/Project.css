@@ -1,0 +1,13 @@
+.project_container {
+    /* IF need additional side effects,, */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
