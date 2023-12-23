@@ -11,7 +11,7 @@ export default function IconBar({name, beforeSelected, afterSelected, className}
     return(
         <div className={`iconActionH ml5H ${className}`} onClick={toggleSelected}
              title="Filter by Archived">
-            <button className="customInputH">{ isSelected ? afterSelected : beforeSelected }</button>
+            <button className="customInputH mrlt2H">{ isSelected ? afterSelected : beforeSelected }</button>
         </div>
     )
 }

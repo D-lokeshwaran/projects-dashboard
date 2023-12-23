@@ -11,8 +11,7 @@
 /* Routes Outlet */
 .dashboard_router {
     width: 100%;
-    background: linear-gradient(to bottom,
-            #d7d7d7eb, transparent);
+    background: #dbdbdbd1 /*#d7d7d7eb*/;
 }
 
 /* Helper Styles, Be aware if u change this
@@ -55,12 +54,22 @@
 .mr20H {
     margin-right: 20px;
 }
+.mrlt2H {
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
 .forceFlexH {
     display: flex !important;
 }
 .flexAlignCenterH {
     display: flex !important;
     align-items: center;
+}
+.displayTableH {
+    display: table;
+    border-spacing: 0px 5px; /* this will separate the rows in table */
+    width: 100%;
 }
 .tableRowH {
     display: table-row;
@@ -105,10 +114,17 @@
 .textHoverUnderlineH:hover {
     text-decoration: underline;
 }
+.textSmallH {
+    font-size: small;
+    vertical-align: top;
+}
 .textSmallBold {
     font-size: small;
     font-weight: bold;
     vertical-align: top;
+}
+.textBoldH {
+    font-weight: bold;
 }
 
 /* Icons Actions */

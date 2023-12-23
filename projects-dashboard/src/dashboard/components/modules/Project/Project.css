@@ -1,4 +1,9 @@
+:root {
+    --row_border_radius: 5px;
+}
+
 .project_container {
+    padding: 10px;
     /* IF need additional side effects,, */
 }
 
@@ -10,4 +15,54 @@
 .title {
     font-size: 1.8rem;
     font-weight: 500;
+}
+
+/* Collection of projects styles */
+.collection {
+    margin-top: 30px;
+}
+.list_header {
+    width: 100%;
+}
+.list_header > th {
+    font-size: small;
+    text-align: left;
+    padding: 10px 0px;
+}
+/* List Row Related Styles */
+.data_container {
+    cursor: pointer;
+    z-index: 1
+}
+
+/* The combination of position and box-shadow makes a highlight hover effect */
+.data_container:hover {
+    position: relative;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08),
+            0px 24px 80px rgba(0, 0, 0, 0.16);
+}
+.listRow {
+    width: 100%;
+    display: table-row;
+    border-collapse: collapse;
+    background-color: white;
+}
+.listRow > div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px 0px;
+}
+.listRow > div:first-child {
+    vertical-align: top;
+    padding: 20px 15px;
+    width: 10px;
+    border-radius: var(--row_border_radius) 0 0 var(--row_border_radius);
+}
+.listRow > div:last-child {
+    border-radius: 0 var(--row_border_radius) var(--row_border_radius) 0;
+}
+
+/* Grid Block */
+.gridBlock {
+    display: flex;
 }
