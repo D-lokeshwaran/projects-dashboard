@@ -1,0 +1,20 @@
+.search_bar {
+    border: 2px solid var(--search_bar_color);
+    border-radius: 5px;
+    background-color: var(--search_bar_color);
+    padding-left: 10px;
+    transition: .2s;
+    min-width: calc(100% - 70%);
+}
+.search_input {
+    padding: 8px;
+    border: none;
+    background-color: var(--search_bar_color);
+    margin-left: 10px;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 5px;
+}
+.search_border {
+    border: 2px solid black;
+}
