@@ -68,7 +68,7 @@
     display: flex !important;
 }
 .flexAlignCenterH {
-    display: flex !important;
+    display: flex;
     align-items: center;
 }
 .displayTableH {
@@ -141,13 +141,11 @@
     border-radius: 5px;
     cursor: pointer;
     border: 1px solid black;
-    background-color: var(--dashboard_secondary_color)
+    background-color: var(--dashboard_secondary_color);
 }
 .iconActionH:hover {
     background-color: var(--dashboard_hover_color);
-}
-.icon {
-    display: table-cell;
+    font-weight: bold;
 }
 
 /* others */
