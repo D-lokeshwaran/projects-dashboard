@@ -6,8 +6,10 @@ import { BsStar, BsStarFill,
          BsFillGridFill } from 'react-icons/bs';
  import { PiListBold } from "react-icons/pi";
 import { IconBar, DropDown, SearchBar } from '../components'
+import { Link } from 'react-router-dom'
+import { usePath } from '../../../contexts/PathContext'
 import moment from 'moment';
-import './Project.css'
+import './ProjectList.css'
 
 export default function Project() {
 
@@ -25,6 +27,8 @@ export default function Project() {
     const [isList, setIsList] = useState(true);
 
     const headers = ["", 'NAME & DESCRIPTION', 'ADDED ON', '# OF TASKS', 'STATUS', ''];
+
+    const path = usePath();
 
     return (
         <div className="project_container">
@@ -49,10 +53,10 @@ export default function Project() {
                         <IconBar name="view" beforeSelected={<PiListBold size={iconsSize}/>}
                                  afterSelected={<BsFillGridFill size={iconsSize}/>} title={`Toggle to ${isList ? 'Grid' : 'List'} View.`}/>
                     </div>
-                    <div className="add_project ml20H">
-                        <button className="actionSuccessH userSelectNone">
+                    <div className="add_project ml20H" onClick={() => path.addPath("add-project")}>
+                        <Link to="add-project" className="actionSuccessH userSelectNone overrideLink">
                             Add Project
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

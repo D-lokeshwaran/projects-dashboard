@@ -3,7 +3,7 @@ import { BsChevronDown, BsChevronUp  } from 'react-icons/bs'
 import './DropDown.css';
 
 DropDown.defaultProps = {
-    name: 'default',
+    name: '',
     contents: [1, 2, 3],
     onHover: false
 }
@@ -23,7 +23,7 @@ export default function DropDown({ name, contents, onHover, className }) {
             setDropdown(value)
         }
     }
-
+    //TODO: need to customize dynamically even more...
     return (
         <div className="flexAlignCenterH ml10H">
             { name && <small className={`${className}`}><b>{name}</b></small> }

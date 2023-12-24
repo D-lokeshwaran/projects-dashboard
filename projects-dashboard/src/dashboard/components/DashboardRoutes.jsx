@@ -1,6 +1,6 @@
 import { Routes, Route,
-         Navigate, Link} from 'react-router-dom'
-import { Home, Project, Visualization } from './modules'
+         Navigate, Link, Outlet} from 'react-router-dom'
+import { Home, ProjectList, Visualization, ProjectForm } from './modules'
 import Header from './Header/Header'
 
 export default function DashboardRoutes() {
@@ -12,14 +12,19 @@ export default function DashboardRoutes() {
                 <Route path="/" element={<Navigate to="/dashboard/home"/>}/>
                 <Route path="dashboard">
                     <Route path="home" element={<Home/>}/>
-                    <Route path="projects" element={<Project/>}/>
-                    <Route path="project/:projectName" element={<Visualization/>}>
-                        <Route path="tasks" element={<Project/>}/>
+                    <Route path="projects">
+                        <Route path="" element={<ProjectList/>}/>
+                        <Route path="add-project" element={<ProjectForm/>}/>
+                    </Route>
+                    <Route path="project/:projectName">
+                        <Route path="" element={<Visualization/>}/>
+                        <Route path="tasks" element={<ProjectList/>}/>
                     </Route>
                     <Route path="visualizer" element={<Visualization/>}/>
                 </Route>
                 <Route path="*" element={<UnableToSupport/>}/>
             </Routes>
+            <Outlet className="ptenH"/>
         </div>
     )
 }
