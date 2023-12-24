@@ -59,8 +59,7 @@ export default function Project() {
                 </div>
             </div>
             <div className={`collection ${isList && 'displayTableH'}`}>
-                {
-                    isList &&
+                {isList &&
                     <tr className="list_header">
                         {
                             headers.map(header => <th>{header}{header && <IconBar name="view" beforeSelected={<BsCapslock/>}
@@ -68,54 +67,28 @@ export default function Project() {
                         }
                     </tr>
                 }
-                <div className={`data_container ${isList ? 'listRow' : 'gridBlock'}`}>
-                    <div>
-                        <img src={project.profile} height="18" className="profile"/>
-                    </div>
-                    <div>
-                        <div className="name textBoldH">{project.name}</div>
-                        <p className="textSmallH">{project.description}</p>
-                        </div>
-                    <div>{project.addedOn}</div>
-                    <div>{project.tasks}</div>
-                    <div>{project.status}</div>
-                    <div>*</div>
-                </div><div className={`data_container ${isList ? 'listRow' : 'gridBlock'}`}>
-                    <div>
-                        <img src={project.profile} height="18" className="profile"/>
-                    </div>
-                    <div>
-                        <div className="name textBoldH">{project.name}</div>
-                        <p className="textSmallH">{project.description}</p>
-                        </div>
-                    <div>{project.addedOn}</div>
-                    <div>{project.tasks}</div>
-                    <div>{project.status}</div>
-                    <div>*</div>
-                </div><div className={`data_container ${isList ? 'listRow' : 'gridBlock'}`}>
-                    <div>
-                        <img src={project.profile} height="18" className="profile"/>
-                    </div>
-                    <div>
-                        <div className="name textBoldH">{project.name}</div>
-                        <p className="textSmallH">{project.description}</p>
-                        </div>
-                    <div>{project.addedOn}</div>
-                    <div>{project.tasks}</div>
-                    <div>{project.status}</div>
-                    <div>*</div>
-                </div>
+                <ProjectRow project={project} isList={isList}/>
+                <ProjectRow project={project} isList={isList}/>
+                <ProjectRow project={project} isList={isList}/>
             </div>
         </div>
     )
 }
 
-function ProjectRow({info}) {
+function ProjectRow({project, isList}) {
     return(
-        <tr className="list_projects">
-            {
-                Object.keys(info).map(key => <td>{info[key]}, </td>)
-            }
-        </tr>
+        <Link to={`/dashboard/visualizer/${project.name}`} className={`data_container ${isList ? 'listRow' : 'gridBlock'} overrideLink`}>
+            <div>
+                <img src={project.profile} height="18" className="profile"/>
+            </div>
+            <div>
+                <div className="name textBoldH">{project.name}</div>
+                <p className="textSmallH">{project.description}</p>
+                </div>
+            <div>{project.addedOn}</div>
+            <div>{project.tasks}</div>
+            <div>{project.status}</div>
+            <div>*</div>
+        </Link>
     )
 }

@@ -44,6 +44,9 @@
 }
 
 /* Margin Relate styles */
+.m10H {
+    margin: 10px;
+}
 .ml5H{
     margin-left: 5px;
 }
