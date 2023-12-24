@@ -1,7 +1,11 @@
 :root {
     --primary_color: #80e580;
     --primary_color_hover: #6fb86f;
+    --dashboard_primary_color: white;
     --search_bar_color: #f1f1f1;
+    --dashboard_secondary_color: #f1f1f1;
+    --dashboard_action_color: #80e580;
+    --dashboard_hover_color: #c7e5c7;
 }
 
 .dashboard {
@@ -137,10 +141,10 @@
     border-radius: 5px;
     cursor: pointer;
     border: 1px solid black;
+    background-color: var(--dashboard_secondary_color)
 }
 .iconActionH:hover {
-    background-color: grey;
-    border: 1px solid white;
+    background-color: var(--dashboard_hover_color);
 }
 .icon {
     display: table-cell;

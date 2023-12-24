@@ -39,17 +39,15 @@ export default function Project() {
                 <SearchBar iconsSize={iconsSize}/>
                 <div className="action_bars flexAlignCenterH">
                     <DropDown name="FOLDER" contents={folders} onHover={true} className="mr20H"/>
-                    <div className="col_customize_bars flexAlignCenterH ml20H">
+                    <div className="col_customize_bars flexAlignCenterH ml10H">
                         <div className="filters flexAlignCenterH">
-                            <small><b>FILTER BY:</b></small>
                             <IconBar name="favorite" beforeSelected={<BsStar size={iconsSize}/>} afterSelected={<BsStarFill size={iconsSize}/>}
                                      className="ml10H" title="Filter by Favorites"/>
                             <IconBar name="archive" beforeSelected={<BsArchive size={iconsSize}/>}
                                      afterSelected={<BsArchiveFill size={iconsSize}/>} title="Filter by Archived"/>
                         </div>
                     </div>
-                    <div className="views flexAlignCenterH ml10H" onClick={() => setIsList(!isList)}>
-                        <span className="textSmallBold">VIEW:</span>
+                    <div className="views flexAlignCenterH" onClick={() => setIsList(!isList)}>
                         <IconBar name="view" beforeSelected={<PiListBold size={iconsSize}/>}
                                  afterSelected={<BsFillGridFill size={iconsSize}/>} title={`Toggle to ${isList ? 'Grid' : 'List'} View.`}/>
                     </div>

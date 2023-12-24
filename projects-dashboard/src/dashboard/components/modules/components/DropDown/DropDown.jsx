@@ -23,9 +23,9 @@ export default function DropDown({ name, contents, onHover, className }) {
             setDropdown(value)
         }
     }
-    //TODO: need to customize dynamically even more...
+    //TODO: need to customize dynamically even more for css styling...
     return (
-        <div className="flexAlignCenterH ml10H">
+        <div className={`flexAlignCenterH ml10H`}>
             { name && <small className={`${className}`}><b>{name}</b></small> }
             <div className={`${onHover && 'dropdown_hover'}`} style={{zIndex: '2'}}
                  onMouseOver={() => onHoverAndSet(true)}

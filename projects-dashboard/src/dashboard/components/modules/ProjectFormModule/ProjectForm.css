@@ -1,0 +1,65 @@
+:root {
+    --border_r_five_px: 5px;
+}
+
+.project_form_module {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.back_btn {
+    padding: 10px;
+    transition: .3s;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline;
+}
+.back_btn:hover {
+    background-color: #CCC;
+    outline: 1px solid grey;
+}
+.project_form_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.project_form {
+    border: 1px solid black;
+    padding: 30px 60px;
+    border-radius: var(--border_r_five_px);
+    background-color: white;
+}
+.project_form_title {
+    border-bottom: 1px solid black;
+    padding: 10px 0px;
+    font-size: 1.4rem;
+}
+.project_form_formik {
+    display: table;
+}
+.field {
+    margin: 10px 0px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.field:focus, .field:active {
+    border: 1px solid blue;
+    outline: 1px solid blue;
+}
+.field_dropdown {
+    padding: 4px;
+    border-radius: var(--border_r_five_px);
+    width: fit-content;
+}
+.required_field:after {
+    content: '*';
+    color: red;
+    margin-left: 4px;
+}
+.project_form_actions {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: end;
+    padding-top: 10px;
+}
