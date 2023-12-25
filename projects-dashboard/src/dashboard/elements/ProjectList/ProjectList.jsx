@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BsStar, BsStarFill,
          BsArchive, BsArchiveFill,
          BsCapslock, BsCapslockFill,
@@ -15,7 +15,7 @@ export default function Project() {
 
     const project = {
         profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRziyaJ8STRBFKemJca2_YulXUKSQSdgRqQ&usqp=CAU',
-        name: 'Test Project',
+        name: 'TestProject',
         description: 'Test Project Description',
         addedOn: moment().format('DD - MMM - YYYY'),
         tasks: 10,

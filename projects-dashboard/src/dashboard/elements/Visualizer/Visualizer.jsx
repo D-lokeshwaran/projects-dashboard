@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BsX, BsAppIndicator } from "react-icons/bs"
 import styled from 'styled-components'
+import { useRecord } from '../../hooks'
 import './Visualizer.css';
 
 export default function Visualizer() {
+
+    const[records, add, clear] = useRecord('activeProjects');
+
     return (
         <div className="visualizer_module m10H">
             <div className="visualizer_container">
                 <div className="multiple_tabs_container">
-                    <TabBar title="Test Project"/>
-                    <TabBar title="Simple Calculator App"/>
-                    <TabBar title="Sudoku Game"/>
+                    <div className="tab_actions">
+                        <button onClick={() => clear()}>Close All Tabs</button>
+                    </div>
                 </div>
                 <div className="visualizer">
 
