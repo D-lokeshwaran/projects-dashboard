@@ -8,17 +8,6 @@
     --dashboard_hover_color: #c7e5c7;
 }
 
-.dashboard {
-    height: 100vh;
-    display: flex;
-}
-
-/* Routes Outlet */
-.dashboard_router {
-    width: 100%;
-    background: #dbdbdbd1 /*#d7d7d7eb*/;
-}
-
 /* Helper Styles, Be aware if u change this
    Note: all the css are ends with H to indicate this style
          comes from DB helper.css
@@ -154,13 +143,17 @@
     background-color: var(--dashboard_secondary_color);
 }
 .iconActionH:hover {
-    background-color: var(--dashboard_hover_color);
+    background-color: var(--primary_color_hover);
     font-weight: bold;
 }
 
 /* others */
 .pointerNone {
     pointer-events: none;
+}
+.overrideLinkH {
+    color: currentColor; /*this currentColor is a variable which contains current clr value...*/
+    text-decoration: none;
 }
 
 /* Tag Styles */

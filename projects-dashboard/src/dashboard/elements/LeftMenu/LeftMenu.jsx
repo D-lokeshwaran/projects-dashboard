@@ -33,7 +33,7 @@ export default function DBLeftMenu() {
                     <span className="header_logo tableCellH">
                         <FaLayerGroup size="20"/>
                     </span>
-                    <span className="header tableCellH">
+                    <span className="left_menu_header tableCellH">
                         <b>My Projects</b><br/> <small>Dashboard</small>
                     </span>
                 </div>
@@ -54,7 +54,7 @@ function NavBar({ navBarInfo, onClick }) {
     const param = useLocation().pathname;
 
     return (
-        <Link to={navBarInfo.path} className="overrideLink" onClick={onClick}>
+        <Link to={navBarInfo.path} className="overrideLinkH" onClick={onClick}>
             <div className={`navBar ${param.startsWith(navBarInfo.path) ? "selectedNavBar" : "navBar_hover"}`}>
                 <span className="navBar_logo">
                     <navBarInfo.svg size="20" style={{marginTop: '2px'}}/> {/* This will load the svg for us */}

@@ -11,8 +11,11 @@
 }
 /* Header styles */
 .header_logo {
-    padding: 10px;
+    padding: 5px 10px;
     display: flex;
+}
+.left_menu_header {
+    vertical-align: top;
 }
 
 /* nav Links styles */
@@ -39,8 +42,4 @@
 }
 .navBar_name {
     margin-left: 12px;
-}
-.overrideLink {
-    color: currentColor; /*this currentColor is a variable which contains current clr value...*/
-    text-decoration: none;
 }

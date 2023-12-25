@@ -1,9 +1,9 @@
 import { Formik, Form, Field } from 'formik'
-import { DropDown } from '../components'
+import { DropDown } from '../../components'
 import { BsArrowLeft } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { usePath } from '../../../contexts/PathContext'
+import { usePath } from '../../contexts/PathContext'
 import './ProjectForm.css'
 
 export default function ProjectForm() {
@@ -13,7 +13,7 @@ export default function ProjectForm() {
 
     return(
         <div className="ptenH project_form_module">
-            <Link to="/dashboard/projects" className="back_btn overrideLink"
+            <Link to="/dashboard/projects" className="back_btn overrideLinkH"
                   onClick={() => path.clearAndAddPath("projects")}>
                 <BsArrowLeft/>
             </Link>

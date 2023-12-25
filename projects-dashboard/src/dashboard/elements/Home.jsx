@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { usePath } from '../../contexts/PathContext'
+import { usePath } from '../contexts/PathContext'
 
 const Aligned = styled.div `
     text-align: center;

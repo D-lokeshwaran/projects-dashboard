@@ -5,9 +5,9 @@ import { BsStar, BsStarFill,
          BsCapslock, BsCapslockFill,
          BsFillGridFill } from 'react-icons/bs';
  import { PiListBold } from "react-icons/pi";
-import { IconBar, DropDown, SearchBar } from '../components'
+import { IconBar, DropDown, SearchBar, ProjectBlock } from '../../components'
 import { Link } from 'react-router-dom'
-import { usePath } from '../../../contexts/PathContext'
+import { usePath } from '../../contexts/PathContext'
 import moment from 'moment';
 import './ProjectList.css'
 
@@ -47,15 +47,14 @@ export default function Project() {
                                      afterSelected={<BsArchiveFill size={iconsSize}/>} title="Filter by Archived"/>
                         </div>
                     </div>
-                    <div className="views flexAlignCenterH" onClick={() => setIsList(!isList)}>
+                    <div className="views" onClick={() => setIsList(!isList)}>
                         <IconBar name="view" beforeSelected={<PiListBold size={iconsSize}/>}
                                  afterSelected={<BsFillGridFill size={iconsSize}/>} title={`Toggle to ${isList ? 'Grid' : 'List'} View.`}/>
                     </div>
-                    <div className="add_project ml20H" onClick={() => path.addPath("add-project")}>
-                        <Link to="add-project" className="actionSuccessH userSelectNone overrideLink">
-                            Add Project
-                        </Link>
-                    </div>
+                    <Link to="add-project" className="ml20H actionSuccessH userSelectNone overrideLinkH"
+                          onClick={() => path.addPath("add-project")}>
+                        Add Project
+                    </Link>
                 </div>
             </div>
             <div className={`collection ${isList && 'displayTableH'}`}>
@@ -67,28 +66,10 @@ export default function Project() {
                         }
                     </tr>
                 }
-                <ProjectRow project={project} isList={isList}/>
-                <ProjectRow project={project} isList={isList}/>
-                <ProjectRow project={project} isList={isList}/>
+                <ProjectBlock project={project} isList={isList}/>
+                <ProjectBlock project={project} isList={isList}/>
+                <ProjectBlock project={project} isList={isList}/>
             </div>
         </div>
-    )
-}
-
-function ProjectRow({project, isList}) {
-    return(
-        <Link to={`/dashboard/visualizer/${project.name}`} className={`data_container ${isList ? 'listRow' : 'gridBlock'} overrideLink`}>
-            <div>
-                <img src={project.profile} height="18" className="profile"/>
-            </div>
-            <div>
-                <div className="name textBoldH">{project.name}</div>
-                <p className="textSmallH">{project.description}</p>
-                </div>
-            <div>{project.addedOn}</div>
-            <div>{project.tasks}</div>
-            <div>{project.status}</div>
-            <div>*</div>
-        </Link>
     )
 }
