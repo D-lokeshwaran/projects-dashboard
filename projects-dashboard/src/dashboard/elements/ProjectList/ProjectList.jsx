@@ -11,16 +11,23 @@ import { usePath } from '../../contexts/PathContext'
 import moment from 'moment';
 import './ProjectList.css'
 
-export default function Project() {
+export default function ProjectList() {
 
-    const project = {
+    const projects = [{
         profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRziyaJ8STRBFKemJca2_YulXUKSQSdgRqQ&usqp=CAU',
         name: 'TestProject',
         description: 'Test Project Description',
         addedOn: moment().format('DD - MMM - YYYY'),
         tasks: 10,
-        status: 'In-active'
-    };
+        status: 'In-Progress'
+    }, {
+        profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRziyaJ8STRBFKemJca2_YulXUKSQSdgRqQ&usqp=CAU',
+        name: 'TestProject2',
+        description: 'Test Project Description 2',
+        addedOn: moment().format('DD - MMM - YYYY'),
+        tasks: 13,
+        status: 'Completed'
+    }];
     const projectsCount = 123;
     const iconsSize = 16;
     const folders = ["Practice", "40 Idea Projects", "Training"]
@@ -60,15 +67,17 @@ export default function Project() {
             <div className={`collection ${isList && 'displayTableH'}`}>
                 {isList &&
                     <tr className="list_header">
-                        {
-                            headers.map(header => <th>{header}{header && <IconBar name="view" beforeSelected={<BsCapslock/>}
-                               afterSelected={<BsCapslockFill/>} title={`Order by name`} sideEffort={false} checked={true}/>}</th>)
+                        { headers.map(header =>
+                             <th>
+                                {header}
+                                {header && <IconBar name="view" beforeSelected={<BsCapslock/>}
+                                          afterSelected={<BsCapslockFill/>} title={`Order by name`}
+                                          sideEffort={false} checked={true} key={header}/>}
+                             </th>)
                         }
                     </tr>
                 }
-                <ProjectBlock project={project} isList={isList}/>
-                <ProjectBlock project={project} isList={isList}/>
-                <ProjectBlock project={project} isList={isList}/>
+                { projects.map(project => <ProjectBlock project={project} isList={isList}/>) }
             </div>
         </div>
     )

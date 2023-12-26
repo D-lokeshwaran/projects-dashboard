@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 /*
  DESCRIPTION: By using this hook u can effectively manage LocalStorage record
@@ -26,7 +26,6 @@ const useRecord = (key:string) => {
         if (!record.includes(value)) {
             const updatedRecord = [...record, value];
             setRecord(updatedRecord);
-            console.log(updatedRecord);
             localStorage.setItem(key, JSON.stringify(updatedRecord));
             return true;
         } else return false;

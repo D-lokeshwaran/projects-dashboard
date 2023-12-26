@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePath } from '../../contexts/PathContext'
-import { useRecord } from '../../hooks'
+import { useRecord, useLocalStorage } from '../../hooks'
 import { useState, useEffect } from 'react'
 import './ProjectBlock.css'
 
@@ -10,10 +10,12 @@ export default function ProjectBlock({project, isList}) {
 
     const[projects, setProjects] = useState([]);
     const [record, addRecord] = useRecord('activeProjects');
+    const [setItem] = useLocalStorage('active');
 
     const handleVisualiseProject = () => {
         path.addPath(project.name.replace(' ', '-'));
         addRecord(project.name);
+        setItem(project.name);
     }
 
     return(

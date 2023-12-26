@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { usePath } from '../../contexts/PathContext'
 import './Header.css';
 
-export default function DBHeader() {
+export default function Header() {
 
     const paths = usePath().path;
 
@@ -11,9 +11,9 @@ export default function DBHeader() {
             <div className="navPath ptenH">
                 {
                     paths.map(path =>
-                        <>
+                        <span key={path}>
                             <small>&nbsp;{path}&nbsp;/</small>
-                        </>
+                        </span>
                     )
                 }
             </div>

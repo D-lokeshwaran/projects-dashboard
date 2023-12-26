@@ -11,6 +11,14 @@ export default function ProjectForm() {
     const[profile, setProfile] = useState();
     const path = usePath();
 
+    const handleImagePreview = (event) => {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            setProfile(reader.result);
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
     return(
         <div className="ptenH project_form_module">
             <Link to="/dashboard/projects" className="back_btn overrideLinkH"
@@ -45,7 +53,12 @@ export default function ProjectForm() {
                                     </div>
                                     <fieldset className="ml20H">
                                         <label className="required_field">Profile</label>
-                                        <input type="file" className="field profile_field"/>
+                                        <label className="field profile_label" for={`${profile == null && 'profile'}`}>
+                                            {profile == null ? <div>Drop your profile</div>
+                                              : <img src={profile} className="preview" height="100" alt="Profile Preview"/>
+                                            }
+                                        </label>
+                                        <input type="file" id="profile" hidden onChange={handleImagePreview} accept="image/*"/>
                                     </fieldset>
                                 </div>
                                 <fieldset>
@@ -63,7 +76,10 @@ export default function ProjectForm() {
                                 </fieldset>
                                 <fieldset className="full_lengthField">
                                     <label className="required_field">Project Root Component Path</label>
-                                    <input type="text" className="field"/>
+                                    <div className="field">
+                                        <span>src/projects</span>
+                                        <input type="text" className="overrideInputH customInputH"/>
+                                    </div>
                                     <small className="mb10H">
                                         Provide project root component path, Initial path starts with <code>src/projects</code>
                                         , After entered path wait until the verification complete.

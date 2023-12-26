@@ -1,11 +1,3 @@
-.visualizer_module {
-    margin-top: 10px;
-    background-color: white;
-    height: calc(100% - 9%);
-}
-.visualizer_container {
-
-}
 .multiple_tabs_container {
     display: flex;
     border: .8px solid #CCC;
@@ -20,6 +12,9 @@
     padding: 6px;
     font-size: .9rem;
     cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+.align_tab_title {
     padding-left: 5px;
     padding-right: 14px;
 }
@@ -29,8 +24,4 @@
 }
 .tab:hover {
     background-color: #CCC;
-}
-.close_tab:hover {
-    background: #CCC;
-    border-radius: 50%;
 }

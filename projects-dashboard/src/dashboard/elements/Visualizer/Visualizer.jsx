@@ -1,17 +1,30 @@
-import { useState, useEffect } from 'react'
-import { BsX, BsAppIndicator } from "react-icons/bs"
-import styled from 'styled-components'
-import { useRecord } from '../../hooks'
+import { useState, useEffect, suspense } from 'react'
+import { useRecord, useLocalStorage } from '../../hooks'
+import { TabBar } from '../../components'
 import './Visualizer.css';
 
 export default function Visualizer() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [projects, add, clear] = useRecord('activeProjects');
+    const [setItem, getItem] = useLocalStorage('active');
 
-    const[records, add, clear] = useRecord('activeProjects');
+    useEffect(() => {
+        const activeProject = getItem();
+        if(projects.includes(activeProject)) {
+            const activeProjectIndex = projects.indexOf(activeProject);
+            setActiveIndex(activeProjectIndex);
+        }
+    }, [projects])
 
     return (
         <div className="visualizer_module m10H">
             <div className="visualizer_container">
                 <div className="multiple_tabs_container">
+                    { projects.map((project, index) =>
+                            <TabBar title={project} activeIndex={activeIndex}
+                                    setActiveIndex={setActiveIndex} key={index +"-"+ project}
+                                    index={index}/>)
+                    }
                     <div className="tab_actions">
                         <button onClick={() => clear()}>Close All Tabs</button>
                     </div>
@@ -21,24 +34,5 @@ export default function Visualizer() {
                 </div>
             </div>
         </div>
-    )
-}
-
-function TabBar({title}) {
-
-    const[selected, setSelected] = useState(false);
-
-    const Tab = styled.div `
-        span {
-            padding-left: 5px;
-            padding-right: 14px;
-        }
-    `;
-    return (
-        <Tab className={`tab ${selected && 'selected_tab'}`} onClick={() => setSelected(!selected)}>
-            <BsAppIndicator/>
-            <span>{title}</span>
-            <BsX size="15" className="close_tab"/>
-        </Tab>
     )
 }
