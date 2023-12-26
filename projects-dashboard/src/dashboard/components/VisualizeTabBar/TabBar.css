@@ -1,8 +1,11 @@
-.multiple_tabs_container {
+.tab_container {
     display: flex;
-    border: .8px solid #CCC;
-    border: .8px solid #CCC;
-    background-color: var(--dashboard_secondary_color)
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid transparent;
+}
+.tab_container:hover {
+    background-color: #CCC;
 }
 .tab {
     display: flex;
@@ -11,8 +14,7 @@
     width: fit-content;
     padding: 6px;
     font-size: .9rem;
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
+    cursor: alias;
 }
 .align_tab_title {
     padding-left: 5px;
@@ -22,6 +24,12 @@
     border-bottom: 3px solid blue;
     background-color: white;
 }
-.tab:hover {
-    background-color: #CCC;
+.close_tab {
+    margin-right: 6px;
+    cursor: pointer;
+    height: fit-content;
+}
+.close_tab:hover {
+    background: #a4a4a4;
+    border-radius: 50%;
 }

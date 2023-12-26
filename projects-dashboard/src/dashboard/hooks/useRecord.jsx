@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useLocalStorage from './useLocalStorage'
 
 /*
  DESCRIPTION: By using this hook u can effectively manage LocalStorage record
@@ -8,17 +9,19 @@ import { useState, useEffect } from 'react'
  Eg: const [data, setData] = useLocalStorage('data', ['local', 'storage']); // in Component1
      data => ['local', 'storage'] // same data in component 2
      setData(['stored', 'in', 'local', 'storage']);
- NOTE: LocalStorage only accept and return strings so convert it into array to manage.
+ TODOs: 1. In Future need to update this to all JS objects...
+        2. useImmer instead of state next time.
 */
 const initialValue = [];
 
 const useRecord = (key:string) => {
     const [record, setRecord] = useState(initialValue);
+    const [setItem, getItem] = useLocalStorage(key);
 
     useEffect(() => {
-        const storedValue = localStorage.getItem(key);
+        let storedValue = getItem();
         if (storedValue) {
-            setRecord(JSON.parse(storedValue));
+            setRecord(storedValue);
         }
     }, [key])
 
@@ -26,21 +29,24 @@ const useRecord = (key:string) => {
         if (!record.includes(value)) {
             const updatedRecord = [...record, value];
             setRecord(updatedRecord);
-            localStorage.setItem(key, JSON.stringify(updatedRecord));
+            setItem(updatedRecord);
             return true;
         } else return false;
     }
 
-    const removeRecord = (index:number) => {
+    const removeRecordByIndex = (index:number) => {
         if (index > record.length) return false
-        delete record[index];
+        const removedValue = record.splice(index, 1);
+        setRecord(record);
+        setItem(record);
+        return removedValue;
     }
 
     const clear = () => {
         setRecord(initialValue);
-        localStorage.setItem(key, JSON.stringify(initialValue));
+        setItem(initialValue);
     }
 
-    return [record, addRecord, clear, removeRecord];
+    return [record, addRecord, clear, removeRecordByIndex];
 }
 export default useRecord;

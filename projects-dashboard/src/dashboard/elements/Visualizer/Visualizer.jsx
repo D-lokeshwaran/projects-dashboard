@@ -1,12 +1,13 @@
-import { useState, useEffect, suspense } from 'react'
+import { useState, useEffect, suspense, useReducer } from 'react'
 import { useRecord, useLocalStorage } from '../../hooks'
 import { TabBar } from '../../components'
 import './Visualizer.css';
 
 export default function Visualizer() {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const [projects, add, clear] = useRecord('activeProjects');
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [projects, add, clear, removeIndex] = useRecord('activeProjects');
     const [setItem, getItem] = useLocalStorage('active');
+    const [, forceUpdate] = useReducer(x => x + 1, 0); // enable forceUpdate by using iterator reducer.
 
     useEffect(() => {
         const activeProject = getItem();
@@ -16,17 +17,27 @@ export default function Visualizer() {
         }
     }, [projects])
 
+    const handleRemoveProject = (index) => {
+        removeIndex(index);
+        if ( index < activeIndex ) {
+            setActiveIndex(activeIndex -1);
+        } else {
+            forceUpdate();
+        }
+    }
+
     return (
         <div className="visualizer_module m10H">
             <div className="visualizer_container">
                 <div className="multiple_tabs_container">
                     { projects.map((project, index) =>
                             <TabBar title={project} activeIndex={activeIndex}
-                                    setActiveIndex={setActiveIndex} key={index +"-"+ project}
-                                    index={index}/>)
+                                    setActiveIndex={setActiveIndex}
+                                    index={index}
+                                    handleRemoveProject={handleRemoveProject}/>)
                     }
                     <div className="tab_actions">
-                        <button onClick={() => clear()}>Close All Tabs</button>
+                        <button onClick={clear}>Close All Tabs</button>
                     </div>
                 </div>
                 <div className="visualizer">

@@ -7,13 +7,21 @@ const useLocalStorage = (key:string) => {
     }
 
     const getItem = () => {
-        const storedValue = localStorage.getItem(key);
-        if(typeof storedValue === 'string') {
-            return storedValue.replaceAll('"', "");
-        } else {
-            return JSON.parse(storedValue);
+        var storedValue = localStorage.getItem(key);
+        if(storedValue) {
+            if (storedValue.includes('{') || storedValue.includes('[')){
+                try {
+                    storedValue = JSON.parse(storedValue)
+                } catch(error) {
+                    setItem(key, '');
+                    console.log('unable to parse ', storedValue)
+                    return '';
+                }
+            } else {
+                storedValue = storedValue.replaceAll('"', '');
+            }
         }
-        return '';
+        return storedValue;
     }
 
     return [setItem, getItem]

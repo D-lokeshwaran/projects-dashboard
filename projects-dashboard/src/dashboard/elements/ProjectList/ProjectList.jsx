@@ -27,6 +27,20 @@ export default function ProjectList() {
         addedOn: moment().format('DD - MMM - YYYY'),
         tasks: 13,
         status: 'Completed'
+    }, {
+        profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRziyaJ8STRBFKemJca2_YulXUKSQSdgRqQ&usqp=CAU',
+        name: 'TestProject3',
+        description: 'Test Project Description 2',
+        addedOn: moment().format('DD - MMM - YYYY'),
+        tasks: 13,
+        status: 'Completed'
+    }, {
+        profile: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRziyaJ8STRBFKemJca2_YulXUKSQSdgRqQ&usqp=CAU',
+        name: 'TestProject4',
+        description: 'Test Project Description 2',
+        addedOn: moment().format('DD - MMM - YYYY'),
+        tasks: 13,
+        status: 'Completed'
     }];
     const projectsCount = 123;
     const iconsSize = 16;

@@ -12,25 +12,3 @@
     border: .8px solid #CCC;
     background-color: var(--dashboard_secondary_color)
 }
-.tab {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: fit-content;
-    padding: 6px;
-    font-size: .9rem;
-    cursor: pointer;
-    padding-left: 5px;
-    padding-right: 14px;
-}
-.selected_tab {
-    border-bottom: 3px solid blue;
-    background-color: white;
-}
-.tab:hover {
-    background-color: #CCC;
-}
-.close_tab:hover {
-    background: #CCC;
-    border-radius: 50%;
-}

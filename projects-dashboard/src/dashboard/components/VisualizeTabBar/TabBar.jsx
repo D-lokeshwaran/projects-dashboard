@@ -1,23 +1,17 @@
-import React from 'react'
 import { BsX, BsAppIndicator } from "react-icons/bs"
 import './TabBar.css'
 
-export default class TabBar extends React.Component {
+const TabBar = ({ title, activeIndex, setActiveIndex, index, handleRemoveProject}) => {
 
-    render() {
-        const activeIndex = this.props.activeIndex;
-        const index = this.props.index;
-        const title = this.props.title;
-        const setActiveIndex = this.props.setActiveIndex;
-
-        return(
-            <span className={`tab ${activeIndex == index && 'selected_tab'}`}
-                 onClick={() => setActiveIndex(index)} key={title}>
+    return(
+        <div className={`tab_container ${activeIndex == index ? 'selected_tab' : ''}`} key={title}>
+            <span className="tab" onClick={() => setActiveIndex(index)}>
                 <BsAppIndicator/>
-                <span className="align_tab_title">{title}</span>
-                <BsX size="15" className="close_tab"/>
+                <span className="align_tab_title" >{title}</span>
             </span>
-        )
-    }
-
+            <BsX size="15" className="close_tab" onClick={() => handleRemoveProject(index)}/>
+        </div>
+    )
 }
+
+export default TabBar;
