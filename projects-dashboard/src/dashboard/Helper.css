@@ -81,7 +81,10 @@
 .tableCellH {
     display: table-cell
 }
-.customInputH, overrideInputH {
+.cursorPointerH {
+    cursor: pointer;
+}
+.overrideInputH {
     border:none;
     background: transparent;
     padding: 5px;

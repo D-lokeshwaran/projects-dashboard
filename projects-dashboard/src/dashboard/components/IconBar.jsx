@@ -21,7 +21,9 @@ export default function IconBar({name, beforeSelected, afterSelected,
     return(
         <div className={`${sideEffort === true && 'iconActionH'} inlineBlockH ml5H ${className}`} onClick={toggleSelected}
              title="Filter by Archived" title={title}>
-            <button className="customInputH mrlt2H">{ isSelected ? afterSelected : beforeSelected }</button>
+            <button className="overrideInputH cursorPointerH mrlt2H">
+                { isSelected ? afterSelected : beforeSelected }
+            </button>
         </div>
     )
 }

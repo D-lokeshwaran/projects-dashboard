@@ -26,6 +26,10 @@
     margin-left: 92px;
 }
 
+.hov_formik_container{
+    width: calc(100% - 30%);
+    padding: 20px 0px;
+}
 .project_form {
     border-radius: var(--border_r_five_px);
     background-color: white;
@@ -44,6 +48,9 @@
     font-size: 1rem;
     border: 1px solid black;
     border-radius: 5px;
+}
+textarea.field {
+    max-width: 580px;
 }
 .field:focus, .field:active {
     border: 1px solid blue;
@@ -82,7 +89,6 @@
     height: 100%;
 }
 .full_lengthField {
-    width: 440px;
 }
 fieldset {
     outline: none;
@@ -97,4 +103,13 @@ fieldset > label {
 }
 .fitContent {
     width: fit-content;
+}
+.root_path_field {
+    font-size: 1rem;
+    padding: 3px;
+    cursor: auto; /* overriding cursor style overrideInputH css style in helper */
+    width: 100% !important;
+}
+.widthMax {
+    width: 100%;
 }

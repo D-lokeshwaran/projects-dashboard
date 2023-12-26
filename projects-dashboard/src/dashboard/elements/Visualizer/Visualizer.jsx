@@ -17,6 +17,13 @@ export default function Visualizer() {
         }
     }, [projects])
 
+    useEffect(() => { // another effect to handle change in tab to local storage.
+        const currentActiveProject = projects.at(activeIndex);
+        if (currentActiveProject && currentActiveProject != undefined) {
+            setItem(currentActiveProject);
+        }
+    }, [activeIndex])
+
     const handleRemoveProject = (index) => {
         removeIndex(index);
         if ( index < activeIndex ) {
