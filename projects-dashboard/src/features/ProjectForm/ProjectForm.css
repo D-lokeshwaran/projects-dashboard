@@ -1,0 +1,64 @@
+:root {
+    --border_r_five_px: 5px;
+}
+
+.project_form_module {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.back_btn {
+    padding: 10px;
+    transition: .3s;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline;
+}
+.back_btn:hover {
+    background-color: #CCC;
+    outline: 1px solid grey;
+}
+.project_form_container {
+    width: 100%;
+    margin-left: 92px;
+}
+.hov_formik_container{
+    width: calc(100% - 30%);
+    padding: 20px 0px;
+}
+.project_form_title {
+    border-bottom: 1px solid black;
+    padding: 10px 0px;
+    font-size: 1.4rem;
+}
+.project_form_formik {
+    display: table;
+}
+
+/* --------------------------- */
+textarea {
+    max-width: 580px;
+}
+.field_dropdown {
+    padding: 4px;
+    border-radius: var(--border_r_five_px);
+    min-width: 100px;
+    max-width: 300px;
+    font-size: .9rem;
+}
+.project_form_actions {
+    border-top: 1px solid black;
+    display: flex;
+    padding-top: 10px;
+}
+.full_lengthField {
+}
+.fitContent {
+    width: fit-content;
+}
+.widthMax {
+    width: 100%;
+}

@@ -1,0 +1,18 @@
+.field_dropdown {
+    padding: 4px;
+    border-radius: var(--border_r_five_px);
+    min-width: 100px;
+    max-width: 300px;
+    font-size: .9rem;
+}
+.fieldset {
+    outline: none;
+    border: none;
+    padding: 5px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.fieldset_label {
+    font-weight: bold;
+    font-size: .9rem;
+}

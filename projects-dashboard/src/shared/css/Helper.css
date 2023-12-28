@@ -1,0 +1,188 @@
+:root {
+    --primary_color: #80e580;
+    --primary_color_hover: #6fb86f;
+    --dashboard_primary_color: white;
+    --search_bar_color: #f1f1f1;
+    --dashboard_secondary_color: white;
+    --dashboard_action_color: #80e580;
+    --dashboard_hover_color: #c7e5c7;
+}
+
+/* Helper Styles, Be aware if u change this
+   Note: all the css are ends with H to indicate this style
+         comes from DB helper.css
+   Star: &#11088;
+*/
+.containerH {
+    padding: .6vmin;
+    padding-top: 10px;
+}
+.pFiveH {
+    padding: 5px;
+}
+.ptenH {
+    padding: 10px;
+}
+.pOneFiveH {
+    padding: 15px;
+}
+.textSmallGreyH {
+    font-size: small;
+    padding-left: 4px;
+    color: #5c5c5c;
+}
+
+/* Margin Relate styles */
+.m10H {
+    margin: 10px;
+}
+.ml5H{
+    margin-left: 5px;
+}
+.ml10H {
+    margin-left: 10px;
+}
+.ml20H {
+    margin-left: 20px;
+}
+.mr10H {
+    margin-right: 10px;
+}
+.mr20H {
+    margin-right: 20px;
+}
+.mb10H {
+    margin-bottom: 10px;
+}
+.mrlt2H {
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+.mt10H {
+    margin-top: 10px;
+}
+.forceFlexH {
+    display: flex !important;
+}
+.flexAlignCenterH {
+    display: flex;
+    align-items: center;
+}
+.flexAlignStartH {
+    display: flex;
+    align-items: flex-start;
+}
+.displayTableH {
+    display: table;
+    border-spacing: 0px 5px; /* this will separate the rows in table */
+    width: 100%;
+}
+.tableRowH {
+    display: table-row;
+}
+.tableCellH {
+    display: table-cell
+}
+.cursorPointerH {
+    cursor: pointer;
+}
+.overrideInputH {
+    border:none;
+    background: transparent;
+    padding: 5px;
+    cursor: pointer;
+}
+.overrideInputH:focus {
+    outline: none
+}
+.userSelectNoneH {
+    user-select: none;
+}
+.trans3sH {
+    transition: .3s;
+}
+.inlineBlockH {
+    display: inline-block;
+}
+
+/* Button Actions style*/
+.actionSuccessH {
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    background-color: var(--primary_color);
+    cursor: pointer;
+    transition: .2s;
+    border: 1px solid black;
+    min-width: 100px;
+}
+.actionSuccessH:hover {
+    background-color: var(--primary_color_hover);
+}
+/* text related styles */
+.textBottomH {
+    vertical-align: bottom;
+}
+.textHoverUnderlineH:hover {
+    text-decoration: underline;
+}
+.textSmallH {
+    font-size: small;
+    vertical-align: top;
+}
+.textSmallBold {
+    font-size: small;
+    font-weight: bold;
+    vertical-align: top;
+}
+.textBoldH {
+    font-weight: bold;
+}
+
+/* Icons Actions */
+.iconActionH {
+    transition: .3s;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: var(--dashboard_secondary_color);
+}
+.iconActionH:hover {
+    background-color: var(--primary_color_hover);
+    font-weight: bold;
+}
+
+/* others */
+.pointerNone {
+    pointer-events: none;
+}
+.overrideLinkH {
+    color: currentColor; /*this currentColor is a variable which contains current clr value...*/
+    text-decoration: none;
+}
+.required_field:after {
+    content: '*';
+    color: red;
+    margin-left: 4px;
+}
+.fieldH {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.fieldH:focus, .fieldH:active {
+    border: 1px solid blue;
+    outline: 1px solid blue;
+}
+
+/* Tag Styles */
+code {
+    background-color: #dedede;
+    font-family: monospace;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 2px;
+}

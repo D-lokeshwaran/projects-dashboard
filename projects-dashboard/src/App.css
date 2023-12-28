@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen
+                ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+.Dashboard {
+    height: 100vh;
+    display: flex;
+}
+
+/* Routes Outlet */
+.Dashboard-Body {
+    width: 100%;
+    background: #edededd1 /*#d7d7d7eb*/;
+    overflow-y: auto;
+}
+.tableRowH {
+    display: table-row;
+}
+.tableCellH {
+    display: table-cell
+}

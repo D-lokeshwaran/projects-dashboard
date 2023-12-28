@@ -1,0 +1,15 @@
+.root_path_prefix, .root_path_field {
+    position: relative;
+    display: block;
+}
+.root_path_field {
+    width: 100%;
+}
+.root_path_prefix::after {
+    content: attr(data-rootPath);
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: grey;
+    display: block;
+}
