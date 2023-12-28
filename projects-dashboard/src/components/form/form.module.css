@@ -16,3 +16,19 @@
     font-weight: bold;
     font-size: .9rem;
 }
+.field {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.field:focus, .field:active {
+    border: 1px solid blue;
+    outline: 1px solid blue;
+}
+.required_field:after {
+    content: '*';
+    color: red;
+    margin-left: 4px;
+}

@@ -1,7 +1,6 @@
 import './ImagePreviewField.css'
 import { useState } from 'react'
-import { Field } from 'formik'
-import { InputWrapper } from '../../../../components'
+import { InputWrapper, MasterInput, defaultFieldStyle } from '../../../../components'
 
 export default function ImagePreviewField({ profile, setProfile }) {
 
@@ -15,12 +14,12 @@ export default function ImagePreviewField({ profile, setProfile }) {
 
     return (
         <InputWrapper label="Profile" required={true} className="ml20H">
-            <label className="fieldH profile_label" for={`${profile == null && 'profile'}`}>
+            <label className={`${defaultFieldStyle} profile_label`} for={`${profile == null && 'profile'}`}>
                 {profile == null ? <div>Drop your profile</div>
                   : <img src={profile} className="preview" height="100" alt="Profile Preview"/>
                 }
             </label>
-            <Field type="file" id="profile" hidden accept="image/*" onChange={handleImagePreview}/>
+            <MasterInput type="file" id="profile" hidden accept="image/*" name="profile" onChange={handleImagePreview}/>
         </InputWrapper>
     )
 }

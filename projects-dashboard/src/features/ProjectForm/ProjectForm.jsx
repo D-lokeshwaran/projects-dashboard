@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage, useField } from 'formik'
 import moment from 'moment'
 import { DropDown } from '../../components'
 import { BsArrowLeft } from 'react-icons/bs'
@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { usePath } from '../../shared/contexts/PathContext'
 import { ImagePreviewField, PrefixReplaceField } from './components'
-import { Input, InputWrapper, InputWrapperSelectField } from '../../components'
+import { InputWrapper, MasterInput } from '../../components'
 import './ProjectForm.css'
 
-const initialProject = {
+const initialValues = {
     name: '',
     folder: '',
     profile: '',
@@ -22,7 +22,7 @@ const initialProject = {
 
 export default function ProjectForm() {
 
-    const [project, setProject] = useState(initialProject);
+    const [project, setProject] = useState(initialValues);
 
     const handleProjectFormChange = (event) => {
         const form = event.target;
@@ -33,6 +33,18 @@ export default function ProjectForm() {
     const [rootPath, setRootPath] = useState('');
     const path = usePath();
 
+    const validateProject = (values) => {
+        const errors = {};
+        if(!values.name) {
+            errors.name = 'Please Enter Project Name';
+        }
+        return errors;
+    }
+
+    const optionsTest = ['Default', 'Folder1', 'Folder2'];
+    const handleSubmit = (values) => {
+        alert(values, null, 2);
+    }
 
     return(
         <div className="ptenH project_form_module">
@@ -45,25 +57,26 @@ export default function ProjectForm() {
                     <div className="project_form_title">
                         Add Project
                     </div>
-                    <Formik>
+                    <Formik initialValues={initialValues}
+                            enableReinitialize={true}
+                            onSubmit={handleSubmit}
+                            validate={validateProject}>
                         <Form className="project_form_formik flexAlignStartH">
                             <div className="hov_formik_container">
                                 <div className="flexAlignStartH">
                                     <div>
-                                        <InputWrapper required={true} label="Name" description="Project name should be unique.">
-                                            <Input type="text"/>
-                                        </InputWrapper>
-                                        <InputWrapperSelectField label="Folder" name='folder' required={true} className='field_dropdown'
-                                                options="Public, Folder1, Folder2" description="Please make sure selected folder doesn't contain this project name"/>
+                                        <MasterInput type="text" name="name" label='Name' description="Please provide unique Name." required/>
+                                        <MasterInput variant='select' label='Folder' name="folder" className='field_dropdown'
+                                                description="Please make sure selected folder doesn't contain this project name"
+                                                children={optionsTest.map(o => <option>{o}</option>)} required/>
                                     </div>
                                     <ImagePreviewField profile={profile} setProfile={setProfile} required={true}/>
                                 </div>
-                                <InputWrapper required={false} label="Description" description="Minimum length should be 100 characters.">
-                                    <Input variant='textarea' className="field" rows="6" name="description"/>
-                                </InputWrapper>
-                                <Input name="addedOn" type="hidden"/>
-                                <InputWrapperSelectField label="Status" name='status' required={false} className='fitContent'
-                                            options="In-Progress, Completed, Give Up"/>
+                                <MasterInput variant='textarea' label='Description' name="description" className=''
+                                        description="Minimum length should be 100 characters." rows="6"/>
+                                <MasterInput name="addedOn" type="hidden" variant='hidden'/>
+                                <MasterInput variant='select' label='Status' name="status" className='fitContent'
+                                        children={"In-Progress, Completed, Give Up".split(', ').map(o => <option>{o}</option>)}/>
                                 <PrefixReplaceField control={{ rootPath, setRootPath }} className="field" match='\s' replaceWith='/'/>
                                 <div className="tasks">
                                 </div>

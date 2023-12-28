@@ -161,23 +161,6 @@
     color: currentColor; /*this currentColor is a variable which contains current clr value...*/
     text-decoration: none;
 }
-.required_field:after {
-    content: '*';
-    color: red;
-    margin-left: 4px;
-}
-.fieldH {
-    margin-top: 5px;
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-.fieldH:focus, .fieldH:active {
-    border: 1px solid blue;
-    outline: 1px solid blue;
-}
-
 /* Tag Styles */
 code {
     background-color: #dedede;

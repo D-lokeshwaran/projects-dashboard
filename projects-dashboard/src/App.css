@@ -17,9 +17,3 @@
     background: #edededd1 /*#d7d7d7eb*/;
     overflow-y: auto;
 }
-.tableRowH {
-    display: table-row;
-}
-.tableCellH {
-    display: table-cell
-}

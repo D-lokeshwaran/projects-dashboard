@@ -43,7 +43,6 @@ textarea {
     max-width: 580px;
 }
 .field_dropdown {
-    padding: 4px;
     border-radius: var(--border_r_five_px);
     min-width: 100px;
     max-width: 300px;
@@ -53,8 +52,6 @@ textarea {
     border-top: 1px solid black;
     display: flex;
     padding-top: 10px;
-}
-.full_lengthField {
 }
 .fitContent {
     width: fit-content;

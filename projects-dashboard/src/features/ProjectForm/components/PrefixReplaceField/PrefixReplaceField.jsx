@@ -1,6 +1,6 @@
 import './PrefixReplaceField.css'
 import { Field } from 'formik';
-import { InputWrapper } from '../../../../components'
+import { InputWrapper, defaultFieldStyle } from '../../../../components'
 
 export default function PrefixReplaceField({ match, replaceWith, prefix, control}) {
 
@@ -25,7 +25,7 @@ export default function PrefixReplaceField({ match, replaceWith, prefix, control
             <div>
                 <label data-rootPath={rootPathPrefix}
                        className="root_path_prefix">
-                    <input type="text" className="fieldH root_path_field" name="rootPath"
+                    <input type="text" className={`${defaultFieldStyle} root_path_field`} name="rootPath"
                            style={{paddingLeft: `${rootPathPrefix.length}ch`}} /* ch is the char unit in css */
                            onChange={handlePathChange} value={control.rootPath}/>
                </label>

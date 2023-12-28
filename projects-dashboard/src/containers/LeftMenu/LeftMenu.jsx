@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { usePath } from '../../shared/contexts/PathContext'
 /* These are al svg React components imported from resources/svg index.js */
 import { FaLayerGroup } from 'react-icons/fa'
-import { BsHouseDoor, BsFolder2Open, BsDisplay } from "react-icons/bs";
+import { BsColumnsGap, BsFolder2Open, BsDisplay } from "react-icons/bs";
 import { BiHome } from "react-icons/bi";
 
 export default function DBLeftMenu() {
@@ -11,9 +11,9 @@ export default function DBLeftMenu() {
     const pathNav = usePath();
 
     const homeNavBar = {
-        title: "Home",
+        title: "Dashboard",
         path: "/dashboard/home",
-        svg: BiHome
+        svg: BsColumnsGap
     }
     const projectsNavBar = {
         title: "Projects",

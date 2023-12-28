@@ -1,5 +1,5 @@
-import App from './App.js'
-import { Dashboard, ProjectList, ProjectForm, Visualizer } from './features'
+import App from '../App.js'
+import { Dashboard, ProjectList, ProjectForm, Visualizer } from '../features'
 import { Navigate } from 'react-router-dom'
 
 const UnableToSupport = () => {
