@@ -1,5 +1,6 @@
 :root {
     --primary_color: #80e580;
+    --primary_hover_color: rgb(60 64 66 / 0.08);
     --primary_color_hover: #8ed38e;
     --dashboard_primary_color: white;
     --search_bar_color: #f1f1f1;
@@ -84,6 +85,12 @@
     border-spacing: 0px 5px; /* this will separate the rows in table */
     width: 100%;
 }
+.tableWidthMaxH {
+    width: 100%;
+}
+.tableCaptionH {
+    display: table-caption;
+}
 .tableRowH {
     display: table-row;
 }
@@ -122,7 +129,7 @@
 }
 
 /* Button Actions style*/
-.success_btnH {
+.success_btnH, .secondary_btnH {
     padding: 10px;
     border-radius: 5px;
     color: black;
@@ -130,9 +137,10 @@
     cursor: pointer;
     transition: .2s;
     border: 1px solid green;
-    min-width: 100px;
+    min-width: 120px;
     color: white !important;
     font-weight: 600;
+    margin: 10px;
 }
 .success_btnH:hover {
     background-color: #1e8449;
@@ -140,9 +148,18 @@
     transform: translateY(0);
     transition-duration: .35s;
 }
-.success_btnH:hover {
+.success_btnH:hover, .secondary_btnH:hover {
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
+.secondary_btnH {
+    background-color: #ebebebab;
+    border-color: grey;
+    color: grey !important;
+}
+.secondary_btnH:hover {
+    background-color: #dbdbdb;
+}
+
 /* text related styles */
 .textBottomH {
     vertical-align: bottom;
@@ -161,6 +178,9 @@
 }
 .textBoldH {
     font-weight: bold;
+}
+.verticalTopH {
+    vertical-align: top;
 }
 
 /* Icons Actions */

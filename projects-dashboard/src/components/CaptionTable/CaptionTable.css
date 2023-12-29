@@ -1,0 +1,43 @@
+.caption_table_container {
+    margin-top: 30px;
+    height: inherit;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 400px;
+}
+.caption_header {
+    background: var(--left_menu_bg_color);
+    color: white;
+    padding: 10px;
+    position: sticky;
+}
+.add_caption {
+    cursor: pointer;
+    border-radius: 50%;
+    height: 20px;
+    width: auto;
+    background-color: var(--primary_color);
+    color: var(--left_menu_bg_color);
+    transition: .1s;
+}
+.add_caption:hover {
+    outline: 2px solid white;
+}
+.captions {
+    overflow-y: scroll;
+    height: 150px;
+}
+.caption {
+    padding: 10px !important;
+    cursor: pointer;
+}
+.caption:hover {
+    background-color: #f0f0f0;
+}
+.caption_cell {
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+}

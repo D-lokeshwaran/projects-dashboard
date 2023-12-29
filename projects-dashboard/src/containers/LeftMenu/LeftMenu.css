@@ -7,6 +7,7 @@
     width: calc(100% - 80%);
     background-color: var(--left_menu_bg_color);
     color: white;
+    display: block;
 }
 /* Header styles */
 .header_logo {
@@ -42,4 +43,13 @@
 }
 .navBar_name {
     margin-left: 12px;
+}
+.dashboard_leftMenu {
+    display: block;
+}
+
+@media only screen and (max-width: 1120px) {
+  .dashboard_leftMenu {
+     display: none;
+  }
 }

@@ -1,12 +1,12 @@
 import { Formik, Form, Field, ErrorMessage, useField } from 'formik'
 import moment from 'moment'
 import { DropDown } from '../../components'
-import { BsArrowLeft } from 'react-icons/bs'
+import { BsArrowLeft, BsPlusCircle, BsCircle, BsCheck2Circle } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { usePath } from '../../shared/contexts/PathContext'
 import { ImagePreviewField, PrefixReplaceField } from './components'
-import { InputWrapper, MasterInput } from '../../components'
+import { InputWrapper, MasterInput, ShowDialog, CaptionTable } from '../../components'
 import './ProjectForm.css'
 
 const initialValues = {
@@ -23,6 +23,7 @@ const initialValues = {
 export default function ProjectForm() {
 
     const [project, setProject] = useState(initialValues);
+    const [show, setShow] = useState(false);
 
     const handleProjectFormChange = (event) => {
         const form = event.target;
@@ -49,20 +50,14 @@ export default function ProjectForm() {
     return(
         <div className="ptenH project_form_module">
             <div className="project_form_container">
-                <div className="flexAlignStartH">
-                    <Link to="/dashboard/projects" className="back_btn overrideLinkH"
-                          onClick={() => path.clearAndAddPath("projects")}>
-                        <BsArrowLeft/>
-                    </Link>
-                    <h2 className="add_project_title">Add Project</h2>
-                </div>
                 <div className="project_form">
                     <Formik initialValues={initialValues}
                             enableReinitialize={true}
                             onSubmit={handleSubmit}
                             validate={validateProject}>
-                        <Form>
-                            <div className="hov_formik_container">
+                        <Form className="hov_formik_container">
+                            <h2 className="add_project_title">Add Project</h2>
+                            <div className=" flexAlignStartH spaceBetweenH">
                                 <div className="project_details">
                                     <MasterInput type="text" name="name" label='Name' required placeholder="Project Name"/>
                                     <div className="flexAlignStartH">
@@ -72,20 +67,38 @@ export default function ProjectForm() {
                                                 children={"No, Low, Medium, High".split(', ').map(o => <option>{o}</option>)}/>
                                     </div>
                                     <PrefixReplaceField control={{ rootPath, setRootPath }} className="field" match='\s' replaceWith='/'/>
-                                    <MasterInput variant='textarea' label='Description' name="description" rows='6' className="description_textarea"
+                                    <MasterInput variant='textarea' label='Description' name="description" rows='6' cols="40" className="description_textarea"
                                                  placeholder="Describe about this project..."/>
                                     <MasterInput name="addedOn" type="hidden" variant='hidden'/>
                                 </div>
-                                <div className="tasks">
+                                <div className="dummy_wrapper">
+                                    <CaptionTable captions={[{task: 'Need to ', date:'12/12/23'}, {task: 'task2', date:'12/11/23'}]}/>
                                 </div>
+                                {show && <ShowDialog title="Create Task" content={
+                                              <div>Welcome ME</div>
+
+                                          } handleClose={() => setShow(false)}/>}
                             </div>
-                            <div>
-                                {/* for future; */}
+                            <div className="form_actions">
+                                <Link to="/dashboard/projects" className="secondary_btnH overrideLinkH"
+                                        onClick={() => path.clearAndAddPath("projects")}>Cancel</Link>
+                                <button className="success_btnH" type="submit">Add Project</button>
                             </div>
                         </Form>
                     </Formik>
                 </div>
             </div>
+        </div>
+    )
+}
+
+function TaskRow({task, date}) {
+
+    return (
+        <div className="task flexAlignStartH verticalTopH tableRowH">
+            <BsCircle className="ml10H"/>
+            <span className="tableCellH task_cell">{task}</span>
+            <span className="tableCellH task_cell">{date}</span>
         </div>
     )
 }

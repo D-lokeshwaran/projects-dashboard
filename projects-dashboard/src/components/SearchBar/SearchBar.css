@@ -4,7 +4,6 @@
     background-color: var(--dashboard_secondary_color);
     padding-left: 10px;
     transition: .2s;
-    min-width: 100%;
 }
 .search_input {
     padding: 8px;
@@ -12,7 +11,6 @@
     background-color: var(--dashboard_secondary_color);
     margin-left: 10px;
     font-size: 1rem;
-    width: 100%;
     border-radius: 5px;
     cursor: auto !important;
 }
