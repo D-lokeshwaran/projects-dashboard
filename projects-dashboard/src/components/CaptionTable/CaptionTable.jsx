@@ -15,7 +15,7 @@ export default function CaptionTable({ captions }) {
             <div className="caption_header flexAlignStartH">
                 Tasks <BsPlusCircle className="ml10H add_caption"/>
             </div>
-            <div className="captions tableCaptionH widthFullH">
+            <div className="captions widthFullH">
                 { captions && captions.map(cap => <Caption {...cap} />) }
             </div>
         </div>
@@ -25,8 +25,8 @@ export default function CaptionTable({ captions }) {
 function Caption(props) {
 
     return (
-        <div className="caption flexAlignStartH verticalTopH tableRowH">
-            {Object.values(props).map(prop => <span className="tableCellH caption_cell">{prop}</span>)
+        <div className="caption flexAlignStartH verticalTopH">
+            {Object.values(props).map(prop => <span className="caption_cell">{prop}</span>)
             }
         </div>
     )

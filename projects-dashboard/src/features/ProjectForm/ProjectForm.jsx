@@ -72,7 +72,7 @@ export default function ProjectForm() {
                                     <MasterInput name="addedOn" type="hidden" variant='hidden'/>
                                 </div>
                                 <div className="dummy_wrapper">
-                                    <CaptionTable captions={[{task: 'Need to ', date:'12/12/23'}, {task: 'task2', date:'12/11/23'}]}/>
+                                    <CaptionTable captions={[{task: 'Need to implement backyard practice', date:'12/12/23'}, {task: 'task2', date:'12/11/23'}]}/>
                                 </div>
                                 {show && <ShowDialog title="Create Task" content={
                                               <div>Welcome ME</div>

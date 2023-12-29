@@ -1,9 +1,13 @@
+:root {
+    --captions_width: 388px;
+}
+
 .caption_table_container {
     margin-top: 30px;
     height: inherit;
     border: 1px solid black;
     border-radius: 5px;
-    min-width: 400px;
+    min-width: var(--captions_width);
 }
 .caption_header {
     background: var(--left_menu_bg_color);
@@ -25,11 +29,13 @@
 }
 .captions {
     overflow-y: scroll;
-    height: 150px;
+    width: var(--captions_width);
+    display: table;
 }
 .caption {
-    padding: 10px !important;
     cursor: pointer;
+    width: calc(var(--captions_width) - 15px);
+    display: table-row;
 }
 .caption:hover {
     background-color: #f0f0f0;
@@ -40,4 +46,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 250px;
+    margin: auto;
+    display: table-cell;
 }
