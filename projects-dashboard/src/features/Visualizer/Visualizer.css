@@ -1,14 +1,11 @@
 .visualizer_module {
-    margin-top: 10px;
     background-color: white;
-    height: calc(100% - 9%);
 }
 .visualizer_container {
 
 }
 .multiple_tabs_container {
     display: flex;
-    border: .8px solid #CCC;
     border: .8px solid #CCC;
     background-color: var(--dashboard_secondary_color)
 }

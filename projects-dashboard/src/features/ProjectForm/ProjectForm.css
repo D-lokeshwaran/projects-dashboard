@@ -1,14 +1,11 @@
 :root {
     --border_r_five_px: 5px;
+    --form_background_color: white;
+    --form_padding:  0 30px;
 }
 
 .project_form_module {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: white;
-    border-radius: 10px;
-    margin-top: 10px;
+    border-radius: 5px;
 }
 .back_btn {
     padding: 10px;
@@ -23,29 +20,26 @@
 }
 .project_form_container {
     width: 100%;
-    margin-left: 92px;
 }
 .hov_formik_container{
-    width: calc(100% - 30%);
-    padding: 20px 0px;
+    background-color: var(--form_background_color);
+    border-radius: 5px;
+    padding: var(--form_padding);
+    padding: 10px 30px;
 }
-.project_form_title {
-    border-bottom: 1px solid black;
-    padding: 10px 0px;
-    font-size: 1.4rem;
+.add_project_title {
+    font-size: 1.5rem;
+    padding: 10px 30px;
 }
-.project_form_formik {
-    display: table;
+.project_details {
+    padding: 0px 30px;
+    width: 50%;
+    position: relative;
 }
-
 /* --------------------------- */
-textarea {
-    max-width: 580px;
-}
 .field_dropdown {
     border-radius: var(--border_r_five_px);
-    min-width: 100px;
-    max-width: 300px;
+    width: 100%;
     font-size: .9rem;
 }
 .project_form_actions {
@@ -56,6 +50,6 @@ textarea {
 .fitContent {
     width: fit-content;
 }
-.widthMax {
-    width: 100%;
+.description_textarea {
+    font-size: .9rem;
 }

@@ -48,36 +48,34 @@ export default function ProjectForm() {
 
     return(
         <div className="ptenH project_form_module">
-            <Link to="/dashboard/projects" className="back_btn overrideLinkH"
-                  onClick={() => path.clearAndAddPath("projects")}>
-                <BsArrowLeft/>
-            </Link>
             <div className="project_form_container">
+                <div className="flexAlignStartH">
+                    <Link to="/dashboard/projects" className="back_btn overrideLinkH"
+                          onClick={() => path.clearAndAddPath("projects")}>
+                        <BsArrowLeft/>
+                    </Link>
+                    <h2 className="add_project_title">Add Project</h2>
+                </div>
                 <div className="project_form">
-                    <div className="project_form_title">
-                        Add Project
-                    </div>
                     <Formik initialValues={initialValues}
                             enableReinitialize={true}
                             onSubmit={handleSubmit}
                             validate={validateProject}>
-                        <Form className="project_form_formik flexAlignStartH">
+                        <Form>
                             <div className="hov_formik_container">
-                                <div className="flexAlignStartH">
-                                    <div>
-                                        <MasterInput type="text" name="name" label='Name' description="Please provide unique Name." required/>
+                                <div className="project_details">
+                                    <MasterInput type="text" name="name" label='Name' required placeholder="Project Name"/>
+                                    <div className="flexAlignStartH">
                                         <MasterInput variant='select' label='Folder' name="folder" className='field_dropdown'
-                                                description="Please make sure selected folder doesn't contain this project name"
-                                                children={optionsTest.map(o => <option>{o}</option>)} required/>
+                                                children={optionsTest.map(o => <option>{o}</option>)} required wrapperClass="widthHalfH"/>
+                                        <MasterInput variant='select' label='Priority' name="priority" className='widthFullH' wrapperClass="widthHalfH ml20H"
+                                                children={"No, Low, Medium, High".split(', ').map(o => <option>{o}</option>)}/>
                                     </div>
-                                    <ImagePreviewField profile={profile} setProfile={setProfile} required={true}/>
+                                    <PrefixReplaceField control={{ rootPath, setRootPath }} className="field" match='\s' replaceWith='/'/>
+                                    <MasterInput variant='textarea' label='Description' name="description" rows='6' className="description_textarea"
+                                                 placeholder="Describe about this project..."/>
+                                    <MasterInput name="addedOn" type="hidden" variant='hidden'/>
                                 </div>
-                                <MasterInput variant='textarea' label='Description' name="description" className=''
-                                        description="Minimum length should be 100 characters." rows="6"/>
-                                <MasterInput name="addedOn" type="hidden" variant='hidden'/>
-                                <MasterInput variant='select' label='Status' name="status" className='fitContent'
-                                        children={"In-Progress, Completed, Give Up".split(', ').map(o => <option>{o}</option>)}/>
-                                <PrefixReplaceField control={{ rootPath, setRootPath }} className="field" match='\s' replaceWith='/'/>
                                 <div className="tasks">
                                 </div>
                             </div>
@@ -86,10 +84,6 @@ export default function ProjectForm() {
                             </div>
                         </Form>
                     </Formik>
-                    <div className="project_form_actions">
-                        <button className="actionSuccessH">Add</button>
-                        <Link to="/dashboard/projects" className="ptenH ml20H">Cancel</Link>
-                    </div>
                 </div>
             </div>
         </div>

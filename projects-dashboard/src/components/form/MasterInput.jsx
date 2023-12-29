@@ -13,7 +13,7 @@ const MasterInput = ({ variant, enableFormik, ...props }) => {
                       <div className="error">{meta.error}</div>
                   ) : null
     return variant !== 'hidden' ?
-           <InputWrapper required={props.required} label={props.label} description={props.description}>
+           <InputWrapper className={props.wrapperClass} required={props.required} label={props.label} description={props.description}>
                {variant && variant == 'select' ? <select {...attributes} />
                     :  variant == 'textarea' ? <textarea {...attributes}/>
                         :   !props.children && <input className="text-input" {...attributes}/>

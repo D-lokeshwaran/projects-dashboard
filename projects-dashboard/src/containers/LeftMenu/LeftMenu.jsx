@@ -34,7 +34,7 @@ export default function DBLeftMenu() {
                         <FaLayerGroup size="20"/>
                     </span>
                     <span className="left_menu_header tableCellH">
-                        <b>My Projects</b><br/> <small>Dashboard</small>
+                        <b>My Projects</b>
                     </span>
                 </div>
                 <div className="leftMenu_navLinks">

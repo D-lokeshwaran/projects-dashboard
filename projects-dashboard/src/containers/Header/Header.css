@@ -1,6 +1,9 @@
 .header_container {
     display: flex;
     justify-content: space-between;
+    background-color: var(--left_menu_bg_color);
+    color: white;
+    box-shadow: 0 0 3px black;
 }
 .user_profile {
     border: 1px solid black;

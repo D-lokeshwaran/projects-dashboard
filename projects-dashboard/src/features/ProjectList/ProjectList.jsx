@@ -54,25 +54,14 @@ export default function ProjectList() {
     return (
         <div className="project_container">
             <div className="header borderBBlack"> {/* flex */}
-                <div className="title">
-                    Projects<span className="projects_count textSmallGreyH">&#0183;{projectsCount}</span>
+                <div className="flexAlignCenterH">
+                    <div className="title">
+                        Projects<span className="projects_count textSmallGreyH">&#0183;{projectsCount}</span>
+                    </div>
+                    <SearchBar iconsSize={iconsSize}/>
                 </div>
-                <SearchBar iconsSize={iconsSize}/>
-                <div className="action_bars flexAlignCenterH">
-                    <DropDown name="FOLDER" contents={folders} onHover={true} className="mr20H"/>
-                    <div className="col_customize_bars flexAlignCenterH ml10H">
-                        <div className="filters flexAlignCenterH">
-                            <IconBar name="favorite" beforeSelected={<BsStar size={iconsSize}/>} afterSelected={<BsStarFill size={iconsSize}/>}
-                                     className="ml10H" title="Filter by Favorites"/>
-                            <IconBar name="archive" beforeSelected={<BsArchive size={iconsSize}/>}
-                                     afterSelected={<BsArchiveFill size={iconsSize}/>} title="Filter by Archived"/>
-                        </div>
-                    </div>
-                    <div className="views" onClick={() => setIsList(!isList)}>
-                        <IconBar name="view" beforeSelected={<PiListBold size={iconsSize}/>}
-                                 afterSelected={<BsFillGridFill size={iconsSize}/>} title={`Toggle to ${isList ? 'Grid' : 'List'} View.`}/>
-                    </div>
-                    <Link to="add-project" className="ml20H actionSuccessH userSelectNone overrideLinkH"
+                <div className="action_bars flexAlignCenterH spaceAroundH">
+                    <Link to="add-project" className="success_btnH overrideLinkH"
                           onClick={() => path.addPath("add-project")}>
                         Add Project
                     </Link>
@@ -84,8 +73,7 @@ export default function ProjectList() {
                         { headers.map(header =>
                              <th>
                                 {header}
-                                {header && <IconBar name="view" beforeSelected={<BsCapslock/>}
-                                          afterSelected={<BsCapslockFill/>} title={`Order by name`}
+                                {header && <IconBar name="view" title={`Order by name`}
                                           sideEffort={false} checked={true} key={header}/>}
                              </th>)
                         }

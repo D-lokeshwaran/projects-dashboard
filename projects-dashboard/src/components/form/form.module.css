@@ -1,3 +1,7 @@
+:root {
+    --field_text_color: #2b2d38
+}
+
 .field_dropdown {
     padding: 4px;
     border-radius: var(--border_r_five_px);
@@ -15,17 +19,24 @@
 .fieldset_label {
     font-weight: bold;
     font-size: .9rem;
+    color: grey;
 }
 .field {
-    margin-top: 5px;
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid black;
+    width: 100%;
+    border: 1px solid #CCC;
     border-radius: 5px;
+    padding: 7px 10px;
+    color: #2b2d38;
+    font-size: 1rem;
+    background: white;
+    transition: border .2s ease-in;
+    margin-top: 5px;
+}
+.field:focus-visible {
+    outline: 2px solid #99C2FF;
 }
 .field:focus, .field:active {
-    border: 1px solid blue;
-    outline: 1px solid blue;
+    border-color: #8888ff;
 }
 .required_field:after {
     content: '*';

@@ -34,7 +34,7 @@ export default function Visualizer() {
     }
 
     return (
-        <div className="visualizer_module m10H">
+        <div className="visualizer_module">
             <div className="visualizer_container">
                 <div className="multiple_tabs_container">
                     { projects.map((project, index) =>

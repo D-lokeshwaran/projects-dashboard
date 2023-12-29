@@ -14,7 +14,7 @@
     display: flex;
 }
 .left_menu_header {
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 /* nav Links styles */
@@ -27,6 +27,7 @@
     cursor: pointer;
     margin: 5px 0px;
     border-radius: 4px;
+    transition: .2s;
 }
 .navBar_hover:hover {
     background-color: #c7e5c7;

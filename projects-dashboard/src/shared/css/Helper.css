@@ -1,6 +1,6 @@
 :root {
     --primary_color: #80e580;
-    --primary_color_hover: #6fb86f;
+    --primary_color_hover: #8ed38e;
     --dashboard_primary_color: white;
     --search_bar_color: #f1f1f1;
     --dashboard_secondary_color: white;
@@ -73,6 +73,12 @@
     display: flex;
     align-items: flex-start;
 }
+.spaceBetweenH {
+    justify-content: space-between;
+}
+.spaceAroundH {
+    justify-content: space-around;
+}
 .displayTableH {
     display: table;
     border-spacing: 0px 5px; /* this will separate the rows in table */
@@ -105,20 +111,37 @@
 .inlineBlockH {
     display: inline-block;
 }
+.widthMaxH {
+    width: 100%;
+}
+.widthHalfH {
+    width: 50%;
+}
+.widthFullH {
+    width: 100%;
+}
 
 /* Button Actions style*/
-.actionSuccessH {
+.success_btnH {
     padding: 10px;
     border-radius: 5px;
     color: black;
-    background-color: var(--primary_color);
+    background-color: #27ae60;
     cursor: pointer;
     transition: .2s;
-    border: 1px solid black;
+    border: 1px solid green;
     min-width: 100px;
+    color: white !important;
+    font-weight: 600;
 }
-.actionSuccessH:hover {
-    background-color: var(--primary_color_hover);
+.success_btnH:hover {
+    background-color: #1e8449;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: .35s;
+}
+.success_btnH:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 /* text related styles */
 .textBottomH {

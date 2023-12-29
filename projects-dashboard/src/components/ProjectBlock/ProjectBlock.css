@@ -30,8 +30,3 @@
 .listRow > div:last-child {
     border-radius: 0 var(--row_border_radius) var(--row_border_radius) 0;
 }
-
-/* Grid Block */
-.gridBlock {
-    display: flex;
-}

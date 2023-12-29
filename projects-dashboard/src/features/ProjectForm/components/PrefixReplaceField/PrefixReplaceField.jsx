@@ -20,8 +20,7 @@ export default function PrefixReplaceField({ match, replaceWith, prefix, control
     }
 
     return (
-        <InputWrapper label="Project Root Component Path" required description='Provide project root component path,
-                Initial path starts with <code>{rootPathPrefix}</code>, Create new folder to add new path.'>
+        <InputWrapper label="Root Path" required >
             <div>
                 <label data-rootPath={rootPathPrefix}
                        className="root_path_prefix">
