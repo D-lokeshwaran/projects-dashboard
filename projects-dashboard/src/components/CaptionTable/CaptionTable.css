@@ -29,8 +29,9 @@
 }
 .captions {
     overflow-y: scroll;
+    height: 150px;
     width: var(--captions_width);
-    display: table;
+    display: table-caption;
 }
 .caption {
     cursor: pointer;
