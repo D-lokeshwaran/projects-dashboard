@@ -58,7 +58,6 @@ export default function ProjectList() {
                     <div className="title">
                         Projects<span className="projects_count textSmallGreyH">&#0183;{projectsCount}</span>
                     </div>
-                    <SearchBar iconsSize={iconsSize}/>
                 </div>
                 <div className="action_bars flexAlignCenterH spaceAroundH">
                     <Link to="add-project" className="success_btnH overrideLinkH"

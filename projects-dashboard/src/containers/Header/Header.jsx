@@ -1,5 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { usePath } from '../../shared/contexts/PathContext'
+import { SearchBar } from '../../components'
+import { FaLayerGroup } from 'react-icons/fa'
 import './Header.css';
 
 export default function Header() {
@@ -8,14 +10,16 @@ export default function Header() {
 
     return (
         <div className="header_container">
-            <div className="navPath ptenH">
-                {
-                    paths.map(path =>
-                        <span key={path}>
-                            <small>&nbsp;{path}&nbsp;/</small>
-                        </span>
-                    )
-                }
+            <div className="wrapper flexAlignCenterH">
+                <div className="leftMenu_header flexAlignCenterH">
+                    <span className="header_logo">
+                        <FaLayerGroup size="20"/>
+                    </span>
+                    <span className="left_menu_header">
+                        <span>My Projects</span>
+                    </span>
+                </div>
+                <SearchBar placeholder="Search..." className="ml40H"/>
             </div>
             <div className="user_profile ptenH">
                  <div className="thumbnail">

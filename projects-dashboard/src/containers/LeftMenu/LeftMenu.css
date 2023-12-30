@@ -4,42 +4,30 @@
 }
 
 .dashboard_leftMenu {
-    width: calc(100% - 80%);
-    background-color: var(--left_menu_bg_color);
+    width: calc(100% - 78%);
+    background-color: #333333;
     color: white;
     display: block;
 }
-/* Header styles */
-.header_logo {
-    padding: 5px 10px;
-    display: flex;
-}
-.left_menu_header {
-    vertical-align: middle;
-}
 
 /* nav Links styles */
-.leftMenu_navLinks {
-    margin: 30px 0px;
-}
 .navBar {
     display: flex;
     align-items: center;
     cursor: pointer;
     margin: 5px 0px;
-    border-radius: 4px;
     transition: .2s;
+    color: #bebebe;
+    padding: 8px 15px;
+    border-left: 5px solid transparent;
 }
 .navBar_hover:hover {
-    background-color: #c7e5c7;
-    color: black;
+    background-color: #222222;
 }
 .selectedNavBar {
-    background-color: var(--primary_color);
-    color: black;
-}
-.navBar {
-    padding: 8px;
+    background-color: #222222;
+    color: #77d98d;
+    border-left: 5px solid #77d98d;
 }
 .navBar_name {
     margin-left: 12px;

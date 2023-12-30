@@ -1,10 +1,23 @@
 .header_container {
     display: flex;
     justify-content: space-between;
-    background-color: var(--left_menu_bg_color);
-    color: white;
+    background-color: white;
+    color: var(--left_menu_bg_color);
     box-shadow: 0 0 3px black;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    z-index: 99999;
 }
 .user_profile {
     border: 1px solid black;
+}
+.header_logo {
+    padding: 5px 10px;
+    display: flex;
+}
+.left_menu_header {
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 1.2rem;
 }

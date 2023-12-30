@@ -27,16 +27,8 @@ export default function DBLeftMenu() {
     }
 
     return (
-        <div className="dashboard_leftMenu containerH">
+        <div className="dashboard_leftMenu">
             <div className="containerH">
-                <div className="leftMenu_header tableRowH flexAlignCenterH">
-                    <span className="header_logo tableCellH">
-                        <FaLayerGroup size="20"/>
-                    </span>
-                    <span className="left_menu_header tableCellH">
-                        <b>My Projects</b>
-                    </span>
-                </div>
                 <div className="leftMenu_navLinks">
                     <NavBar navBarInfo={homeNavBar} onClick={() => pathNav.clearPath()}/>
                     <NavBar navBarInfo={projectsNavBar}

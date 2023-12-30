@@ -8,13 +8,15 @@ function App() {
     return (
         <div className="Dashboard">
             <HigherOrderContextProvider>
+            <Header/>
+            <div className="Dashboard-wrapper">
                 <LeftMenu/>
                 <div className="Dashboard-Body">
-                    <Header/>
                     <div className="Dashboard-content">
                         <Content/>
                     </div>
                 </div>
+            </div>
             </HigherOrderContextProvider>
         </div>
     );

@@ -6,14 +6,25 @@
                 ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
 }
 
+/*
+    Green Color Palettes
+    #618264 -> lv4
+    #79AC78 -> lv3
+    #B0D9B1 -> lv2
+    #D0E7D2 -> lv1
+*/
+
+
 .Dashboard {
-    height: 100vh;
+    /* Additional effects*/
+}
+.Dashboard-wrapper {
+    min-height: 93vh;
     display: flex;
 }
-
 /* Routes Outlet */
 .Dashboard-Body {
     width: 100%;
-    background: #edededd1 /*#d7d7d7eb*/;
+    background: #e5efe6;
     overflow-y: auto;
 }

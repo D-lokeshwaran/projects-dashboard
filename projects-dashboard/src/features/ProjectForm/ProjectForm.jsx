@@ -48,7 +48,7 @@ export default function ProjectForm() {
     }
 
     return(
-        <div className="ptenH project_form_module">
+        <div className="project_form_module">
             <div className="project_form_container">
                 <div className="project_form">
                     <Formik initialValues={initialValues}
@@ -57,7 +57,7 @@ export default function ProjectForm() {
                             validate={validateProject}>
                         { (props) =>
                             <Form className="hov_formik_container">
-                                <h2 className="add_project_title">Add Project</h2>
+                                <h2 className="add_project_title">Project Information</h2>
                                 <div className=" flexAlignStartH spaceBetweenH">
                                     <div className="project_details">
                                         <MasterInput type="text" name="name" label='Name' required placeholder="Project Name"/>
@@ -72,17 +72,15 @@ export default function ProjectForm() {
                                                      placeholder="Describe about this project..."/>
                                         <MasterInput name="addedOn" type="hidden" variant='hidden'/>
                                     </div>
-                                    <div className="dummy_wrapper">
-                                        <CaptionTable title="Tasks" captions={[{task: 'Need to implement backyard practice', date:'12/12/23'}, {task: 'task2', date:'12/11/23'}]}
-                                                      dialog={{title: 'Create Task', content: <TaskForm/>}}/>
-                                        <CaptionTable title="Bugs" captions={[{task: 'DropDown function no working', date:'12/12/23'}, {task: 'demo image is now uploading', date:'12/11/23'}]}
-                                                        disable/>
+                                    <div className="dummy_wrapper additional_features">
+                                        <CaptionTable title="Tasks" dialog={{title: 'Create Task', content: <TaskForm/>}}/>
+                                        <CaptionTable title="Bugs" disable/>
                                     </div>
                                 </div>
                                 <div className="form_actions">
                                     <Link to="/dashboard/projects" className="secondary_btnH overrideLinkH"
                                             onClick={() => path.clearAndAddPath("projects")}>Cancel</Link>
-                                    <button className="success_btnH" type="submit">Add Project</button>
+                                    <button className="success_btnH m10H" type="submit">Add Project</button>
                                 </div>
                             </Form>
                         }

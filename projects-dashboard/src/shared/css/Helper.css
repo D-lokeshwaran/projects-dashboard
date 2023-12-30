@@ -37,6 +37,9 @@
 .m10H {
     margin: 10px;
 }
+.m20H {
+    margin: 10px;
+}
 .ml5H{
     margin-left: 5px;
 }
@@ -48,6 +51,9 @@
 }
 .mr10H {
     margin-right: 10px;
+}
+.mt20H {
+    margin-top: 20px;
 }
 .mr20H {
     margin-right: 20px;
@@ -137,18 +143,15 @@
     padding: 10px;
     border-radius: 5px;
     color: black;
-    background-color: #27ae60;
+    background-color: #2ea44f;
     cursor: pointer;
     transition: .2s;
-    border: 1px solid green;
-    min-width: 120px;
     color: white !important;
-    font-weight: 600;
-    margin: 10px;
+    font-weight: 500;
+    border: none;
 }
 .success_btnH:hover {
     background-color: #1e8449;
-    opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
 }
