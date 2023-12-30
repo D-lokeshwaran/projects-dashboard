@@ -109,6 +109,10 @@
 .overrideInputH:focus {
     outline: none
 }
+.overrideButtonH {
+    border: none;
+    background: transparent;
+}
 .userSelectNoneH {
     user-select: none;
 }

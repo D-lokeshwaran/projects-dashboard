@@ -16,7 +16,6 @@
     padding: var(--form_padding);
     padding: 10px 30px;
     width: fit-content;
-    margin: 0 auto;
     border: 2px solid #CCC;
 }
 .add_project_title {

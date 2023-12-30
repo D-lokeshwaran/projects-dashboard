@@ -29,6 +29,7 @@
 }
 .captions {
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 150px;
     width: var(--captions_width);
     display: table-caption;
@@ -38,7 +39,10 @@
     width: calc(var(--captions_width) - 15px);
     display: table-row;
 }
-.caption:hover {
+.caption_disabled {
+    opacity: .4;
+}
+.caption_hover:hover {
     background-color: #f0f0f0;
 }
 .caption_cell {

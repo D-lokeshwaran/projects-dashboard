@@ -54,7 +54,7 @@ function NavBar({ navBarInfo, onClick }) {
     const param = useLocation().pathname;
 
     return (
-        <Link to={navBarInfo.path} className="overrideLinkH" onClick={onClick}>
+        <Link to={navBarInfo.path} className="overrideLinkH navBar_container" onClick={onClick}>
             <div className={`navBar ${param.startsWith(navBarInfo.path) ? "selectedNavBar" : "navBar_hover"}`}>
                 <span className="navBar_logo">
                     <navBarInfo.svg size="20" style={{marginTop: '2px'}}/> {/* This will load the svg for us */}
