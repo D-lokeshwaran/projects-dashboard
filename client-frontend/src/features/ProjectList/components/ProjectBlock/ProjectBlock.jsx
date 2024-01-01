@@ -18,20 +18,24 @@ export default function ProjectBlock({project, isList}) {
         setItem(project.name);
     }
 
+    const defaultImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPRziyaJ8STRBFKemJca2_YulXUKSQSdgRqQ&usqp=CAU'
+
     return(
         <Link to={`/dashboard/visualizer/${project.name}`}
               className={`data_container ${isList ? 'listRow' : 'gridBlock'} overrideLinkH`}
               onClick={handleVisualiseProject}>
             <div>
-                <img src={project.profile} height="18" className="profile"/>
+                <img src={defaultImg} height="18" className="profile"/>
             </div>
             <div>
                 <div className="name textBoldH">{project.name}</div>
                 <p className="textSmallH">{project.description}</p>
                 </div>
             <div>{project.addedOn}</div>
-            <div>{project.tasks}</div>
+            <div>{project.priority}</div>
+            <div>{project.noOfTasks}</div>
             <div>{project.status}</div>
+            <div>{project.noOfBugs}</div>
             <div>*</div>
         </Link>
     )

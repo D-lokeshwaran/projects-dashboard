@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/projects-dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/client-frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/ProjectApiService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/fetchApiClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/Folder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectList/ProjectList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectList/ProjectList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectList/components/ProjectBlock/ProjectBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectList/components/ProjectBlock/ProjectBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/MyprojectsDashboardApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/MyprojectsDashboardApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/utils/AuditModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/utils/Identifiable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,29 +40,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/msuser1/training_workspace/github_workspace/projects-dasshboard/projects-dashboard/src/features/Task&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/msuser1/training_workspace/github_workspace/projects-dashboard/client-frontend/src",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TEXT&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/features/Task" />
       <recent name="$PROJECT_DIR$/src/components/CaptionTable" />
       <recent name="$PROJECT_DIR$/src/components/form" />
       <recent name="$PROJECT_DIR$/src/features/ProjectForm/components/PrefixReplaceField" />
-      <recent name="$PROJECT_DIR$/src/features/Dashboard" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/features/ProjectList/components" />
