@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ZOc4XiCDYcho8DO7mzGlA84Ijy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/msuser1/training_workspace/github_workspace/projects-dasshboard/projects-dashboard/src/features/Task&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/Task" />
+      <recent name="$PROJECT_DIR$/src/components/CaptionTable" />
+      <recent name="$PROJECT_DIR$/src/components/form" />
+      <recent name="$PROJECT_DIR$/src/features/ProjectForm/components/PrefixReplaceField" />
+      <recent name="$PROJECT_DIR$/src/features/Dashboard" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/ProjectList/components" />
+      <recent name="$PROJECT_DIR$/src/containers" />
+      <recent name="$PROJECT_DIR$/src/routes" />
+      <recent name="$PROJECT_DIR$/src/shared/css" />
+      <recent name="$PROJECT_DIR$/src/features/Dashboard" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="" />
+      <created>1702296375281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702296375281</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Reformatted folder stucture and removed unwanted code and refactored components as per a SEP.s">
+      <created>1703315252347</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703315252347</updated>
+    </task>
+    <task id="LOCAL-00002" summary="half completed row styling and shadow effect">
+      <created>1703336048228</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703336048228</updated>
+    </task>
+    <task id="LOCAL-00003" summary="resolved dropdown bugs and formatted leftMenu comp&#10;color">
+      <created>1703342097020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703342097020</updated>
+    </task>
+    <task id="LOCAL-00004" summary="resolved and formatted some bugs and added show dialog component">
+      <created>1703353388315</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703353388315</updated>
+    </task>
+    <task id="LOCAL-00005" summary="formatted folder format and added add-project page need to comple it">
+      <created>1703410540667</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703410540667</updated>
+    </task>
+    <task id="LOCAL-00006" summary="aligned some of css for DashboardHelper.css">
+      <created>1703425700565</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703425700565</updated>
+    </task>
+    <task id="LOCAL-00007" summary="aligned some of css for DashboardHelper.css">
+      <created>1703426855011</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703426855011</updated>
+    </task>
+    <task id="LOCAL-00008" summary="ui completed for ProjectForm.jsx need to implement actions">
+      <created>1703435231798</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703435231798</updated>
+    </task>
+    <task id="LOCAL-00009" summary="implemented Visualizer.jsx logic and need to add css into it and actions">
+      <created>1703439486431</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703439486431</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Hole new refactore on project structure and added ProjectBlock.jsx component">
+      <created>1703488887794</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703488887794</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added new Record hook in my project and impl it in Visualizer.jsx">
+      <created>1703509886587</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703509886587</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implemented Visualizer.jsx top bar navgation over projects and formatted as singleton pattern">
+      <created>1703576061724</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703576061724</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Resolved bugs in Visualizer.jsx and completed top tab bar nav and re-corrected useLocalStorage.jsx">
+      <created>1703590785355</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703590785355</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added selected on local storage functionality to Visualizer.jsx nav bar">
+      <created>1703612106125</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703612106125</updated>
+    </task>
+    <task id="LOCAL-00015" summary="A Humanise change done on refactoring the folder structure in top real world project structure this is the last we focus on structure">
+      <created>1703747055616</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703747055616</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added MasterInput.jsx to handle all inputs at once and imple in ProjectForm.jsx">
+      <created>1703755282692</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703755282692</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Alignment changes">
+      <created>1703840568723</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703840568723</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added task and bugs logic in form and stated to complete formik stuff...">
+      <created>1703857151046</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703857151046</updated>
+    </task>
+    <task id="LOCAL-00019" summary="aligned a little bit of that table captions">
+      <created>1703870507230</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1703870507230</updated>
+    </task>
+    <task id="LOCAL-00020" summary="aligned a little bit of that table captions 2 time">
+      <created>1703870679817</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703870679817</updated>
+    </task>
+    <task id="LOCAL-00021" summary="last refactored the layout and one last time is ther before that ill complete the main functions">
+      <created>1703916288043</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703916288043</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats">
+      <created>1703935104602</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1703935104602</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ts" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Reformatted folder stucture and removed unwanted code and refactored components as per a SEP.s" />
+    <MESSAGE value="half completed row styling and shadow effect" />
+    <MESSAGE value="resolved dropdown bugs and formatted leftMenu comp&#10;color" />
+    <MESSAGE value="resolved and formatted some bugs and added show dialog component" />
+    <MESSAGE value="formatted folder format and added add-project page need to comple it" />
+    <MESSAGE value="aligned some of css for DashboardHelper.css" />
+    <MESSAGE value="ui completed for ProjectForm.jsx need to implement actions" />
+    <MESSAGE value="implemented Visualizer.jsx logic and need to add css into it and actions" />
+    <MESSAGE value="Hole new refactore on project structure and added ProjectBlock.jsx component" />
+    <MESSAGE value="Added new Record hook in my project and impl it in Visualizer.jsx" />
+    <MESSAGE value="Implemented Visualizer.jsx top bar navgation over projects and formatted as singleton pattern" />
+    <MESSAGE value="Resolved bugs in Visualizer.jsx and completed top tab bar nav and re-corrected useLocalStorage.jsx" />
+    <MESSAGE value="added selected on local storage functionality to Visualizer.jsx nav bar" />
+    <MESSAGE value="A Humanise change done on refactoring the folder structure in top real world project structure this is the last we focus on structure" />
+    <MESSAGE value="Added MasterInput.jsx to handle all inputs at once and imple in ProjectForm.jsx" />
+    <MESSAGE value="Alignment changes" />
+    <MESSAGE value="Added task and bugs logic in form and stated to complete formik stuff..." />
+    <MESSAGE value="aligned a little bit of that table captions" />
+    <MESSAGE value="aligned a little bit of that table captions 2 time" />
+    <MESSAGE value="last refactored the layout and one last time is ther before that ill complete the main functions" />
+    <MESSAGE value="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats" />
+  </component>
+</project>
