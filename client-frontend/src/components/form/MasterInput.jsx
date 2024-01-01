@@ -4,14 +4,12 @@ import InputWrapper from './InputWrapper'
 
 export const defaultFieldStyle = styles.field;
 
-const MasterInput = ({ variant, enableFormik, ...props }) => {
+const MasterInput = ({ variant, ...props }) => {
 
     const [field, meta] = useField(props);
-    const attributes = enableFormik ? {...field, ...props}
-            : {...props, className: `${styles.field && styles.field} ${props.className}`};
-    const error = enableFormik == true && meta.error ? (
-                      <div className="error">{meta.error}</div>
-                  ) : null
+    const attributes = {...props, ...field, className: `${styles.field && styles.field} ${props.className}`};
+    const error = meta.error && <div className={styles.fieldError}>{meta.error}</div>
+
     return variant !== 'hidden' ?
            <InputWrapper className={props.wrapperClass} required={props.required} label={props.label} description={props.description}>
                {variant && variant == 'select' ? <select {...attributes} />

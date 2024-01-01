@@ -9,7 +9,7 @@ import { IconBar, DropDown, SearchBar } from '../../components'
 import ProjectBlock from './components/ProjectBlock/ProjectBlock'
 import { Link } from 'react-router-dom'
 import { usePath } from '../../shared/contexts/PathContext'
-import { retrieveAllProjects } from '../../api/ProjectApiService.js'
+import { retrieveAllProjectsApi } from '../../api/ProjectApiService.js'
 import moment from 'moment';
 import './ProjectList.css'
 
@@ -22,7 +22,7 @@ export default function ProjectList() {
     }, [])
 
     async function refreshProjects() {
-        await retrieveAllProjects()
+        await retrieveAllProjectsApi()
             .then(data => setProjects(data))
             .catch(error => {
                 console.log(error)

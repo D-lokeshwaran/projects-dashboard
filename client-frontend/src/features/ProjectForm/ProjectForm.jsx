@@ -1,29 +1,50 @@
 import { Formik, Form, Field, ErrorMessage, useField } from 'formik'
 import moment from 'moment'
 import { DropDown } from '../../components'
-import { BsArrowLeft, BsPlusCircle, BsCircle, BsCheck2Circle } from 'react-icons/bs'
+import { BsArrowLeft,
+         BsPlusCircle,
+         BsCircle,
+         BsCheck2Circle } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { usePath } from '../../shared/contexts/PathContext'
 import { ImagePreviewField, PrefixReplaceField, AdditionalDexter } from './components'
 import { MasterInput, ShowDialog, CaptionTable } from '../../components'
+import { createProjectApi } from '../../api/ProjectApiService.js'
+import { retrieveAllFoldersApi } from '../../api/FolderApiService.js'
 import TaskForm from '../TaskForm/TaskForm.jsx'
 import './ProjectForm.css'
 
 const initialValues = {
     name: '',
     folder: '',
-    profile: '',
-    description: '',
+    priority: '',
     addedOn: moment().format('DD - MMM - YYYY'),
     status: '',
     rootPath: '',
-    tasks: [{}],
+    description: '',
 }
 
 export default function ProjectForm() {
 
     const [project, setProject] = useState(initialValues);
+    const [folders, setFolders] = useState([]);
+
+    useEffect(() => {
+        refreshFolders();
+    }, [])
+
+    async function refreshFolders() {
+        await retrieveAllFoldersApi()
+            .then(data => {
+                setFolders([]);
+                data.map(folder => setFolders(prevFolders => [...prevFolders, folder['name']]))
+            })
+            .catch(error => {
+                alert('unable to get folders');
+                console.log(error);
+            })
+    }
 
     const handleProjectFormChange = (event) => {
         const form = event.target;
@@ -34,43 +55,44 @@ export default function ProjectForm() {
     const [rootPath, setRootPath] = useState('');
     const path = usePath();
 
-    const validateProject = (values) => {
+    const handleValidate = (values) => {
         const errors = {};
-        if(!values.name) {
-            errors.name = 'Please Enter Project Name';
+        if (values.name.trim() == '') {
+            errors.name = "Please Enter project name"
         }
         return errors;
     }
 
-    const optionsTest = ['Default', 'Folder1', 'Folder2'];
     const handleSubmit = (values) => {
-        alert(values, null, 2);
+        alert(JSON.stringify(values), null, 2);
     }
 
     return(
         <div className="project_form_module">
             <div className="project_form_container">
                 <div className="project_form">
-                    <Formik initialValues={initialValues}
-                            enableReinitialize={true}
+                    <Formik initialValues={ initialValues }
+                            enableReinitialize = {true}
                             onSubmit={handleSubmit}
-                            validate={validateProject}>
-                        { (props) =>
+                            validate={handleValidate}
+                    >
+                    {
+                        (props) => (
                             <Form className="hov_formik_container">
                                 <h2 className="add_project_title">Project Information</h2>
                                 <div className=" flexAlignStartH spaceBetweenH">
                                     <div className="project_details">
-                                        <MasterInput type="text" name="name" label='Name' required placeholder="Project Name"/>
-                                        <div className="flexAlignStartH">
-                                            <MasterInput variant='select' label='Folder' name="folder" className='field_dropdown'
-                                                    children={optionsTest.map(o => <option>{o}</option>)} wrapperClass="widthHalfH"/>
-                                            <MasterInput variant='select' label='Priority' name="priority" className='widthFullH' wrapperClass="widthHalfH ml20H"
+                                        <MasterInput type="text" name="name" label='Name' required placeholder="Project Name" />
+                                        <MasterInput variant='select' label='Folder' name="folder"
+                                                children={folders.map(o => <option>{o}</option>)}/>
+                                        <div className="flexAlignStartH spaceBetweenH">
+                                            <MasterInput variant='select' label='Priority' name="priority" wrapperClass='widthFullH'
                                                     children={"No, Low, Medium, High".split(', ').map(o => <option>{o}</option>)}/>
+                                            <MasterInput label='Added On' name="addedOn" type="date" className="widthHalfH" wrapperClass="widthHalfH ml20H"/>
                                         </div>
                                         <PrefixReplaceField control={{ rootPath, setRootPath }} className="field" match='\s' replaceWith='/'/>
-                                        <MasterInput variant='textarea' label='Description' name="description" rows='10' cols="40" className="description_textarea"
+                                        <MasterInput variant='textarea' label='Description' name="description" rows='6' cols="40" className="description_textarea"
                                                      placeholder="Describe about this project..."/>
-                                        <MasterInput name="addedOn" type="hidden" variant='hidden'/>
                                     </div>
                                     <div className="dummy_wrapper additional_features">
                                         <AdditionalDexter task={{title: 'Tasks', dialog: {title:'Create Task',  content: <TaskForm/>},
@@ -85,6 +107,7 @@ export default function ProjectForm() {
                                     <button className="success_btnH m10H" type="submit">Add Project</button>
                                 </div>
                             </Form>
+                            )
                         }
                     </Formik>
                 </div>

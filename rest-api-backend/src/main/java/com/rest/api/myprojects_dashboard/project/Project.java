@@ -1,5 +1,6 @@
 package com.rest.api.myprojects_dashboard.project;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.rest.api.myprojects_dashboard.folder.Folder;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

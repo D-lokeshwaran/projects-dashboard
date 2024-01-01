@@ -1,4 +1,13 @@
 import { fetchApiClient } from './fetchApiClient'
 
-export const retrieveAllProjects =
+export const retrieveAllProjectsApi =
     () => fetchApiClient('/projects').then(resp => resp.json());
+
+export const createProjectApi =
+    (project) => fetchApiClient('/projects', {
+                     method: 'POST',
+                     headers: {
+                        'content-type': 'application/json'
+                     },
+                     body: JSON.stringify(project)
+                 })

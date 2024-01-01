@@ -30,7 +30,7 @@ export default function ProjectBlock({project, isList}) {
             <div>
                 <div className="name textBoldH">{project.name}</div>
                 <p className="textSmallH">{project.description}</p>
-                </div>
+            </div>
             <div>{project.addedOn}</div>
             <div>{project.priority}</div>
             <div>{project.noOfTasks}</div>
