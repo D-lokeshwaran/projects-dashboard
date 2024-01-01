@@ -1,5 +1,6 @@
 package com.rest.api.myprojects_dashboard.folder;
 
+import com.rest.api.myprojects_dashboard.project.Project;
 import org.hibernate.boot.model.naming.IllegalIdentifierException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +8,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FolderController {
@@ -22,32 +24,41 @@ public class FolderController {
         return repository.findAll();
     }
 
-    @GetMapping("/folders/{oid}")
-    public Folder retrieveFolder(@PathVariable Long oid) {
-        Folder folder = repository.findById(oid)
-                .orElseThrow(() -> new IllegalIdentifierException("oid " + oid + " does not exits!"));
-        return folder;
+    @GetMapping("/folders/{folderName}")
+    public Folder retrieveFolder(@PathVariable String folder) {
+        Folder retrievedFolder = repository.findById(folder)
+                .orElseThrow(() -> new IllegalIdentifierException("Folder name " + folder + " does not exits!"));
+        return retrievedFolder;
+    }
+    @GetMapping("/folders/{folderName}/projects")
+    public List<Project> retrieveProjectsForFolder(@PathVariable String folderName) {
+        Optional<Folder> folder = repository.findById(folderName);
+        if (folder.isPresent()) {
+            return folder.get().getProjects();
+        } else {
+            throw new IllegalIdentifierException("Folder " + folderName + " does not exist");
+        }
     }
 
     @PostMapping("/folders")
     public ResponseEntity<Folder> createFolder(@RequestBody Folder folder) {
         repository.save(folder);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{oid}")
-                .buildAndExpand(folder.getOid())
+                .path("/{folderName}")
+                .buildAndExpand(folder.getName())
                 .toUri(); // this will return the request entity with get uri.
         return ResponseEntity.created(location).build();
     }
 
-    @PutMapping("/folders/{oid}")
+    @PutMapping("/folders")
     private ResponseEntity<Folder> updateFolder(@RequestBody Folder folder) {
         repository.save(folder);
         return ResponseEntity.accepted().build();
     }
 
-    @DeleteMapping("/folders/{oid}")
-    public ResponseEntity<Folder> deleteFolder(@PathVariable Long oid) {
-        repository.deleteById(oid);
+    @DeleteMapping("/folders/{folderName}")
+    public ResponseEntity<Folder> deleteFolder(@PathVariable String folder) {
+        repository.deleteById(folder);
         return ResponseEntity.noContent().build();
     }
     

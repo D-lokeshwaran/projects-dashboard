@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats" />
+    <list default="true" id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/projects-dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/client-frontend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/Folder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/folder/FolderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/utils/AuditModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/utils/Identifiable.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +71,21 @@
       <recent name="$PROJECT_DIR$/src/shared/css" />
       <recent name="$PROJECT_DIR$/src/features/Dashboard" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="client-frontend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="client-frontend" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

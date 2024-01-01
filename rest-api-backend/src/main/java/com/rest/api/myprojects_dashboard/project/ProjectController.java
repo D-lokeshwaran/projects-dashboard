@@ -16,19 +16,19 @@ public class ProjectController {
         this.repository = repository;
     }
 
-    @GetMapping("/folders/{folderName}/projects")
+    @GetMapping("/projects")
     public List<Project> retrieveAllProjects() {
         return repository.findAll();
     }
 
-    @GetMapping("/folders/{folderName}/projects/{oid}")
+    @GetMapping("/projects/{oid}")
     public Project retrieveProject(@PathVariable Long oid) {
         Project project = repository.findById(oid)
                 .orElseThrow(() -> new IllegalIdentifierException("oid " + oid + " does not exits!"));
         return project;
     }
 
-    @PostMapping("/folders/{folderName}/projects")
+    @PostMapping("/projects")
     public ResponseEntity<Project> createProject(@RequestBody Project project) {
         repository.save(project);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -38,13 +38,13 @@ public class ProjectController {
         return ResponseEntity.created(location).build();
     }
 
-    @PutMapping("/folders/{folderName}/projects/{oid}")
+    @PutMapping("/projects")
     private ResponseEntity<Project> updateProject(@RequestBody Project project) {
         repository.save(project);
         return ResponseEntity.accepted().build();
     }
 
-    @DeleteMapping("/folders/{folderName}/projects/{oid}")
+    @DeleteMapping("/projects/{oid}")
     public ResponseEntity<Project> deleteProject(@PathVariable Long oid) {
         repository.deleteById(oid);
         return ResponseEntity.noContent().build();

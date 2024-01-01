@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import utils.Identifiable;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -12,7 +13,7 @@ import utils.Identifiable;
 @Table(name = "project")
 public class Project extends Identifiable {
 
-    @Column(name = "project_name", unique = true)
+    @Column(name = "project_name")
     private String name;
 
     @ManyToOne
@@ -30,5 +31,6 @@ public class Project extends Identifiable {
     @Column(length = 600)
     private String description;
 
+    private Date addedOn;
 
 }
