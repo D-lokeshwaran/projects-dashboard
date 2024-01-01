@@ -1,0 +1,18 @@
+/* Additional Features */
+.additional_features {
+    width: 100%;
+}
+.features_nav {
+    color: black;
+    padding: 8px 15px;
+    margin: 15px 0px;
+    border-bottom: 1px solid #CCC;
+    cursor: pointer;
+    transition: .3s;
+}
+.selected_feature_nav {
+    border-bottom: 4px solid var(--primary_color);
+}
+.disabled_btn {
+    visibility: hidden;
+}

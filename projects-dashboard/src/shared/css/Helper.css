@@ -1,5 +1,7 @@
 :root {
-    --primary_color: #80e580;
+    --primary_color: #2ea44f;
+    --primary_bg_color: #333333;
+    --primary_text_color: #bebebe;
     --primary_hover_color: rgb(60 64 66 / 0.08);
     --primary_color_hover: #8ed38e;
     --dashboard_primary_color: white;
@@ -23,6 +25,12 @@
 }
 .ptenH {
     padding: 10px;
+}
+.ptb10H {
+    padding: 10px 0px;
+}
+.pl10H {
+    padding-left: 10px;
 }
 .pOneFiveH {
     padding: 15px;
@@ -91,6 +99,10 @@
     border-spacing: 0px 5px; /* this will separate the rows in table */
     width: 100%;
 }
+.displayTableWFullH {
+    display: table;
+    width: 100%;
+}
 .tableWidthMaxH {
     width: 100%;
 }
@@ -140,7 +152,7 @@
 
 /* Button Actions style*/
 .success_btnH, .secondary_btnH {
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
     color: black;
     background-color: #2ea44f;
@@ -211,6 +223,26 @@
     color: currentColor; /*this currentColor is a variable which contains current clr value...*/
     text-decoration: none;
 }
+.listHeaderH {
+    width: 100%;
+}
+.listHeaderH > th {
+    font-size: small;
+    text-align: left;
+    padding-top: 10px;
+}
+.listRowH {
+    width: 100%;
+    display: table-row;
+    border-collapse: collapse;
+    background-color: white;
+}
+.listRowH > div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px 0px;
+}
+
 /* Tag Styles */
 code {
     background-color: #dedede;
@@ -218,4 +250,8 @@ code {
     display: inline-block;
     padding: 2px;
     border-radius: 2px;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }

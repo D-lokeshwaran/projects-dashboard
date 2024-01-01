@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { usePath } from '../../shared/contexts/PathContext'
-import { useRecord, useLocalStorage } from '../../shared/hooks'
+import { usePath } from '../../../../shared/contexts/PathContext'
+import { useRecord, useLocalStorage } from '../../../../shared/hooks'
 import { useState, useEffect } from 'react'
 import './ProjectBlock.css'
 

@@ -1,9 +1,15 @@
 .search_bar {
     border: 1px solid #CCC;
-    border-radius: 5px;
+    border-radius: 34px;
     background-color: var(--dashboard_secondary_color);
     padding-left: 10px;
     transition: .2s;
+}
+.search_bar:hover {
+    box-shadow: 0 0 6px #CCC;
+}
+.search_bar:focus {
+    width: 600px;
 }
 .search_input {
     padding: 8px;
@@ -11,9 +17,9 @@
     background-color: var(--dashboard_secondary_color);
     margin-left: 10px;
     font-size: 1rem;
-    border-radius: 5px;
+    border-radius: 34px;
     cursor: auto !important;
 }
 .search_border {
-    outline: 2px solid black;
+    outline: 2px solid var(--primary_color);
 }

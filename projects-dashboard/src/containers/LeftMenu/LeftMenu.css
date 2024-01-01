@@ -4,10 +4,12 @@
 }
 
 .dashboard_leftMenu {
-    width: calc(100% - 78%);
+    width: calc(100% - 82%);
     background-color: #333333;
     color: white;
     display: block;
+    position: fixed;
+    height: 100%;
 }
 
 /* nav Links styles */

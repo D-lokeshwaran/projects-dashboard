@@ -5,7 +5,7 @@ import { BsArrowLeft, BsPlusCircle, BsCircle, BsCheck2Circle } from 'react-icons
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { usePath } from '../../shared/contexts/PathContext'
-import { ImagePreviewField, PrefixReplaceField } from './components'
+import { ImagePreviewField, PrefixReplaceField, AdditionalDexter } from './components'
 import { MasterInput, ShowDialog, CaptionTable } from '../../components'
 import TaskForm from '../TaskForm/TaskForm.jsx'
 import './ProjectForm.css'
@@ -73,8 +73,10 @@ export default function ProjectForm() {
                                         <MasterInput name="addedOn" type="hidden" variant='hidden'/>
                                     </div>
                                     <div className="dummy_wrapper additional_features">
-                                        <CaptionTable title="Tasks" dialog={{title: 'Create Task', content: <TaskForm/>}}/>
-                                        <CaptionTable title="Bugs" disable/>
+                                        <AdditionalDexter task={{title: 'Tasks', dialog: {title:'Create Task',  content: <TaskForm/>},
+                                                    captions: [{title: 'Test Task 1', startDate: '02/12/23', endDate: '02/12/23', status: 'In-Progress'}] }}
+                                                        bugs={{title: 'Bugs', dialog:{title: 'Create Bug', content: <TaskForm/>}, disable: true,
+                                                    captions: [{name: 'Default status should be In-Progress', foundedAt: '1/1/24', status: 'In Progress'}]}}/>
                                     </div>
                                 </div>
                                 <div className="form_actions">

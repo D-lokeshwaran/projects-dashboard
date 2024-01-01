@@ -1,19 +1,20 @@
 :root {
-    --captions_width: 388px;
+    --captions_width: 580px;
 }
 
-.caption_table_container {
-    margin-top: 30px;
-    height: inherit;
-    border: 1px solid black;
-    border-radius: 5px;
-    min-width: var(--captions_width);
+.captions_table_wrapper {
+    height: 320px;
+    overflow: auto;
+    margin-top: 15px;
+    border: 1px solid #CCC;
+    border-spacing: 0px;
 }
 .caption_header {
-    background: var(--left_menu_bg_color);
-    color: white;
-    padding: 10px;
     position: sticky;
+    top: 0;
+    background: var(--primary_bg_color);
+    color: white;
+    padding: 11px 0px;
 }
 .add_caption {
     cursor: pointer;
@@ -23,21 +24,17 @@
     background-color: var(--primary_color);
     color: var(--left_menu_bg_color);
     transition: .1s;
+    color: #e5efe6;
 }
 .add_caption:hover {
     outline: 2px solid white;
 }
-.captions {
+.caption_data_row {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 150px;
-    width: var(--captions_width);
-    display: table-caption;
 }
-.caption {
+.caption_data {
     cursor: pointer;
-    width: calc(var(--captions_width) - 15px);
-    display: table-row;
 }
 .caption_disabled {
     opacity: .4;

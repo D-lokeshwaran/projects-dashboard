@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen
                 ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
@@ -13,7 +12,9 @@
     #B0D9B1 -> lv2
     #D0E7D2 -> lv1
 */
-
+:root {
+    --Dashboard_margin_left: 18%
+}
 
 .Dashboard {
     /* Additional effects*/
@@ -26,5 +27,7 @@
 .Dashboard-Body {
     width: 100%;
     background: #e5efe6;
-    overflow-y: auto;
+}
+.Dashboard-content {
+    margin-left: var(--Dashboard_margin_left);
 }

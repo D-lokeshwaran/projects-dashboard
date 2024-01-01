@@ -15,6 +15,7 @@
 .header_logo {
     padding: 5px 10px;
     display: flex;
+    margin-left: 10px;
 }
 .left_menu_header {
     vertical-align: middle;

@@ -5,7 +5,8 @@ import { BsStar, BsStarFill,
          BsCapslock, BsCapslockFill,
          BsFillGridFill } from 'react-icons/bs';
  import { PiListBold } from "react-icons/pi";
-import { IconBar, DropDown, SearchBar, ProjectBlock } from '../../components'
+import { IconBar, DropDown, SearchBar } from '../../components'
+import ProjectBlock from './components/ProjectBlock/ProjectBlock'
 import { Link } from 'react-router-dom'
 import { usePath } from '../../shared/contexts/PathContext'
 import moment from 'moment';

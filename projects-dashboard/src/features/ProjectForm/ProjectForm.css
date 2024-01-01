@@ -13,7 +13,6 @@
 .hov_formik_container{
     background-color: var(--form_background_color);
     padding: 10px 30px;
-    width: fit-content;
 }
 .add_project_title {
     font-size: 1.5rem;
@@ -24,6 +23,7 @@
 .project_details {
     padding: var(--form_padding);
     position: relative;
+    width: calc(100% - 27%);
 }
 /* --------------------------- */
 .field_dropdown {
