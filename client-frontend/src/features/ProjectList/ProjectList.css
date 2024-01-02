@@ -7,15 +7,23 @@
 
     /* IF need additional side effects,, */
 }
-
+.projects_count {
+    font-weight: bold;
+    color: #969696;
+    font-family: BlinkMacSystemFont,Segoe UI,Roboto,Oxygen
+                  ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important;
+}
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 .title {
     font-size: 1.8rem;
     font-weight: 500;
+    font-family: BlinkMacSystemFont,Segoe UI,Roboto,Oxygen
+                  ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif !important;
 }
 
 /* Collection of projects styles */

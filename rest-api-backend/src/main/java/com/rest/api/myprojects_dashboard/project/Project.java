@@ -26,7 +26,7 @@ public class Project extends Identifiable {
     @Enumerated(EnumType.STRING)
     private Priority priority;
     public enum Priority {
-        No, Low, Medium, High
+        No, Normal, Medium, High
     }
 
     @Column(name = "root_path")
@@ -36,6 +36,7 @@ public class Project extends Identifiable {
     private String description;
 
     @Getter(AccessLevel.NONE)
+    @Temporal(TemporalType.DATE)
     private Date addedOn;
 
     @Enumerated(EnumType.STRING)
@@ -60,7 +61,7 @@ public class Project extends Identifiable {
         return new Date();
     }
     public Integer getNoOfTasks() {
-        return 10;
+        return tasks.size();
     }
     public Integer getNoOfBugs() {
         return 13;

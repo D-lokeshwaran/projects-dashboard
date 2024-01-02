@@ -10,7 +10,7 @@ import ProjectBlock from './components/ProjectBlock/ProjectBlock'
 import { Link } from 'react-router-dom'
 import { usePath } from '../../shared/contexts/PathContext'
 import { retrieveAllProjectsApi } from '../../api/ProjectApiService.js'
-import moment from 'moment';
+import { formatDate } from '../../utils/AppUtils'
 import './ProjectList.css'
 
 export default function ProjectList() {
@@ -18,19 +18,31 @@ export default function ProjectList() {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        refreshProjects();
+        refreshAndFormatProjects();
     }, [])
 
-    async function refreshProjects() {
+    async function refreshAndFormatProjects() {
         await retrieveAllProjectsApi()
-            .then(data => setProjects(data))
+            .then(data => {
+                formatProject(data);
+                setProjects(data);
+            })
             .catch(error => {
                 console.log(error)
                 alert("Something went wrong check the console")
             });
     }
 
-    const projectsCount = 123;
+    function formatProject(projects) {
+        const formatProject = (project) => {
+            project['addedOn'] = formatDate(project['addedOn']);
+            return project;
+        }
+        const formattedProjects = projects.map(project => formatProject(project))
+        return formattedProjects;
+    }
+
+    const projectsCount = projects.length;
     const iconsSize = 16;
     const folders = ["Practice", "40 Idea Projects", "Training"]
     const [isList, setIsList] = useState(true);

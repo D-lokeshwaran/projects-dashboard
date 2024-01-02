@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePath } from '../../../../shared/contexts/PathContext'
 import { useRecord, useLocalStorage } from '../../../../shared/hooks'
 import { useState, useEffect } from 'react'
+import { BsThreeDots } from "react-icons/bs";
 import './ProjectBlock.css'
 
 export default function ProjectBlock({project, isList}) {
@@ -36,7 +37,7 @@ export default function ProjectBlock({project, isList}) {
             <div>{project.noOfTasks}</div>
             <div>{project.status}</div>
             <div>{project.noOfBugs}</div>
-            <div>*</div>
+            <div onClick={(ev) => ev.preventDefault()}><BsThreeDots className="action_cell" size={24}/></div>
         </Link>
     )
 }

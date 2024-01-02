@@ -25,7 +25,7 @@ export default function ProjectForm() {
     const initialValues = {
         name: '',
         folder: folders && folders[0],
-        priority: '',
+        priority: 'Normal',
         /* startOn: '', latter ......*/
         rootPath: '',
         description: '',
@@ -48,7 +48,6 @@ export default function ProjectForm() {
 
     const handleValidate = (values) => {
         const errors = {};
-        console.log(values);
         if (!values.name) {
             errors.name = "Please enter project name"
         } else if (values.name && values.name.length < 5) {
@@ -56,6 +55,16 @@ export default function ProjectForm() {
         }
         if (!values.rootPath) {
             errors.rootPath = "Please enter root path."
+        }
+        /* below code will protect form empty field validation over backend compatibility */
+        const emptyFields = Object.keys(values).filter(field => {
+            const value = values[field];
+            return value || value == null || value == undefined
+        })
+        if (!emptyFields.length > 0) {
+            errors["containsEmpty"] = "Form contains Empty fields"
+            console.log("Hey Your form contains empty fields checkout", emptyFields)
+            alert("Empty Fields Validation Occur")
         }
         return errors;
     }

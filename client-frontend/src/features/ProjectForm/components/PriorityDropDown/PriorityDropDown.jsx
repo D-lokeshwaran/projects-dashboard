@@ -4,6 +4,7 @@ import { BsPlus } from 'react-icons/bs'
 import { useState, useEffect, useRef } from 'react';
 import { BsFillFlagFill, BsFlag, BsCheck } from "react-icons/bs";
 import { useField, useFormikContext } from 'formik';
+import { useDetectOutsideWrapper } from '../../../../shared/hooks'
 
 PriorityDropDown.defaultProps = {
     contents: [0, 1, 2]
@@ -18,10 +19,9 @@ export default function PriorityDropDown({ contents, ...props }) {
     const { setFieldValue } = useFormikContext(); // load value into formik
 
     const priorityLevels = [{color: 'Red', name: "High"}, {color: '#ff7200', name: "Medium"},
-            {color: 'Green', name: "Low"}, {color: 'grey', name: "No"}]; //TODO: need to change Low => Normal
+            {color: 'Green', name: "Normal"}, {color: 'grey', name: "No"}]; //TODO: need to change Low => Normal
 
     useEffect(() => {
-        setFieldValue(props['name'], "Low", false) // initial pr...
         const storedPriority = field.value;
         if ( storedPriority ) {
             priorityLevels.map(pr => {
@@ -31,6 +31,9 @@ export default function PriorityDropDown({ contents, ...props }) {
             })
         }
     }, []);
+
+    const ref = useRef(null);
+    useDetectOutsideWrapper(ref, () => setIsActive(false))
 
     const handleClick = (priority) => {
         setIsActive(false);
@@ -44,7 +47,7 @@ export default function PriorityDropDown({ contents, ...props }) {
 
      return (
          <div className="flexAlignCenterH ml10H priority_dropdown">
-             <div className="priority_selected" tabIndex='0' style={{border: `1px dashed ${selectedColor}`}} onClick={() => setIsActive(!isActive)}>
+             <div className="priority_selected" tabIndex='0' ref={ref} style={{border: `1px dashed ${selectedColor}`}} onClick={() => setIsActive(!isActive)}>
                  <BsFillFlagFill size={15} style={{color: selectedColor}}/>
             </div>
             {isActive == true &&
