@@ -31,11 +31,3 @@
 .listRow > div:last-child {
     border-radius: 0 var(--row_border_radius) var(--row_border_radius) 0;
 }
-.action_cell {
-    padding: 4px;
-    broder-radius: 3px;
-}
-.action_cell:active {
-    background: #CCC;
-    color: white;
-}
