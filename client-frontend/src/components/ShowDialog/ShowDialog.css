@@ -20,8 +20,7 @@
     width: fit-content;
     background-color: white;
     border: 2px solid #CCC;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 5px;
     top: 20%;
     left: 0;
     right: 0;
@@ -31,6 +30,11 @@
 .dialog_header {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #CCC;
+    padding: 10px 15px;
+}
+.dialog_form_contents {
+    padding: 10px 20px;
 }
 .dialog_cancel_btn {
     cursor: pointer;
@@ -44,5 +48,5 @@
 }
 .dialog_title {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }

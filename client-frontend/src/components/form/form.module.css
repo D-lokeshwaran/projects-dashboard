@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 .fieldset_label {
-    font-weight: bold;
+    font-weight: 500;
     font-size: .9rem;
 }
 .field {
@@ -44,8 +44,6 @@
     margin-left: 4px;
 }
 .fieldError {
-    position: absolute;
-    margin-top: 55px;
     font-size: .8rem;
     color: red;
 }

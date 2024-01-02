@@ -11,7 +11,7 @@ const MasterInput = ({ variant, ...props }) => {
     const error = meta.error && <div className={styles.fieldError}>{meta.error}</div>
 
     return variant !== 'hidden' ?
-           <InputWrapper className={props.wrapperClass} required={props.required} label={props.label} description={props.description}>
+           <InputWrapper className={props.wrapperClass} required={props.requiredField} label={props.label} description={props.description}>
                {variant && variant == 'select' ? <select {...attributes} />
                     :  variant == 'textarea' ? <textarea {...attributes}/>
                         :   !props.children && <input className="text-input" {...attributes}/>

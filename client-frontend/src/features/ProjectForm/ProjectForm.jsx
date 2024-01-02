@@ -8,27 +8,29 @@ import { BsArrowLeft,
 import { Link } from 'react-router-dom'
 import { useState, useRef, useEffect } from 'react'
 import { usePath } from '../../shared/contexts/PathContext'
-import { ImagePreviewField, PrefixReplaceField, AdditionalDexter } from './components'
+import { ImagePreviewField,
+         PrefixReplaceField,
+         AdditionalDexter,
+         PriorityDropDown } from './components'
 import { MasterInput, ShowDialog, CaptionTable } from '../../components'
 import { createProjectApi } from '../../api/ProjectApiService.js'
 import { retrieveAllFoldersApi } from '../../api/FolderApiService.js'
 import TaskForm from '../TaskForm/TaskForm.jsx'
 import './ProjectForm.css'
 
-const initialValues = {
-    name: '',
-    folder: '',
-    priority: '',
-    addedOn: moment().format('DD - MMM - YYYY'),
-    status: '',
-    rootPath: '',
-    description: '',
-}
-
 export default function ProjectForm() {
 
-    const [project, setProject] = useState(initialValues);
     const [folders, setFolders] = useState([]);
+
+    const initialValues = {
+        name: '',
+        folder: folders && folders[0],
+        priority: '',
+        /* startOn: '', latter ......*/
+        rootPath: '',
+        description: '',
+    }
+    const [project, setProject] = useState(initialValues);
 
     useEffect(() => {
         refreshFolders();
@@ -36,35 +38,39 @@ export default function ProjectForm() {
 
     async function refreshFolders() {
         await retrieveAllFoldersApi()
-            .then(data => {
-                setFolders([]);
-                data.map(folder => setFolders(prevFolders => [...prevFolders, folder['name']]))
-            })
+            .then(data => setFolders(data))
             .catch(error => {
                 alert('unable to get folders');
                 console.log(error);
             })
     }
-
-    const handleProjectFormChange = (event) => {
-        const form = event.target;
-    }
-
-    const[profile, setProfile] = useState();
-    /* need to manage in object after */
-    const [rootPath, setRootPath] = useState('');
     const path = usePath();
 
     const handleValidate = (values) => {
         const errors = {};
-        if (values.name.trim() == '') {
-            errors.name = "Please Enter project name"
+        console.log(values);
+        if (!values.name) {
+            errors.name = "Please enter project name"
+        } else if (values.name && values.name.length < 5) {
+            errors.name = "Name should be greater than 5 letters"
+        }
+        if (!values.rootPath) {
+            errors.rootPath = "Please enter root path."
         }
         return errors;
     }
 
-    const handleSubmit = (values) => {
-        alert(JSON.stringify(values), null, 2);
+    const handleSubmit = (project) => {
+        folders.map(folder => {
+            if (folder.name === project['folder']) {
+                project['folder'] = folder;
+            }
+        })
+        createProjectApi(project)
+            .catch(error => {
+                alert("Can't create project")
+                console.log(error);
+            })
     }
 
     return(
@@ -75,23 +81,22 @@ export default function ProjectForm() {
                             enableReinitialize = {true}
                             onSubmit={handleSubmit}
                             validate={handleValidate}
+                            validateOnBlur={true}
                     >
                     {
                         (props) => (
                             <Form className="hov_formik_container">
-                                <h2 className="add_project_title">Project Information</h2>
+                                <div className="project_form_header flexAlignCenterH spaceBetweenH">Project
+                                    <PriorityDropDown name="priority"/>
+                                </div>
                                 <div className=" flexAlignStartH spaceBetweenH">
                                     <div className="project_details">
-                                        <MasterInput type="text" name="name" label='Name' required placeholder="Project Name" />
+                                        <MasterInput type="text" name="name" label='Name' placeholder="Project Name" requiredField/>
                                         <MasterInput variant='select' label='Folder' name="folder"
-                                                children={folders.map(o => <option>{o}</option>)}/>
-                                        <div className="flexAlignStartH spaceBetweenH">
-                                            <MasterInput variant='select' label='Priority' name="priority" wrapperClass='widthFullH'
-                                                    children={"No, Low, Medium, High".split(', ').map(o => <option>{o}</option>)}/>
-                                            <MasterInput label='Added On' name="addedOn" type="date" className="widthHalfH" wrapperClass="widthHalfH ml20H"/>
-                                        </div>
-                                        <PrefixReplaceField control={{ rootPath, setRootPath }} className="field" match='\s' replaceWith='/'/>
-                                        <MasterInput variant='textarea' label='Description' name="description" rows='6' cols="40" className="description_textarea"
+                                                children={folders.map(o => <option>{o.name}</option>)}/>
+
+                                        <PrefixReplaceField match='\s' replaceWith='/'/>
+                                        <MasterInput variant='textarea' label='Description' name="description" rows='8' cols="40" className="description_textarea"
                                                      placeholder="Describe about this project..."/>
                                     </div>
                                     <div className="dummy_wrapper additional_features">

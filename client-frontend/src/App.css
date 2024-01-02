@@ -1,8 +1,9 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen
-                ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-family: Roboto, "DejaVu Sans Condensed", "Helvetica Neue",
+                 Helvetica, Arial, sans-serif,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen
+                 ,Ubuntu,Fira Sans,Droid Sans,Helvetica Neue,sans-serif
 }
 
 /*
@@ -29,5 +30,13 @@
     background: #e5efe6;
 }
 .Dashboard-content {
+    transition: .3s;
+    z-index: 0;
     margin-left: var(--Dashboard_margin_left);
+}
+
+@media only screen and (max-width: 1120px) {
+  .Dashboard-content {
+     margin-left: 0px;
+  }
 }

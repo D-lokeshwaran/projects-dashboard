@@ -1,15 +1,15 @@
 package com.rest.api.myprojects_dashboard.project;
 
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rest.api.myprojects_dashboard.folder.Folder;
+import com.rest.api.myprojects_dashboard.task.Task;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import utils.Identifiable;
-
-import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -51,6 +51,10 @@ public class Project extends Identifiable {
     @Getter(AccessLevel.NONE)
     @Transient
     private Integer noOfBugs;
+
+    @OneToMany(mappedBy = "project")
+    @JsonIgnore
+    private List<Task> tasks;
 
     public Date getAddedOn() {
         return new Date();

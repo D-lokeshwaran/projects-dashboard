@@ -242,6 +242,14 @@
     vertical-align: middle;
     padding: 20px 0px;
 }
+.errorMessageH {
+    color: red;
+    font-size: .8rem;
+    position: sticky;
+}
+.borderRedH {
+    border-color: red;
+}
 
 /* Tag Styles */
 code {

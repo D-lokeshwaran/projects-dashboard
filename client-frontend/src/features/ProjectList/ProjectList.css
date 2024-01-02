@@ -24,6 +24,7 @@
 }
 .list_header {
     width: 100%;
+    word-break: break-word;
 }
 .list_header > th {
     font-size: small;

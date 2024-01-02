@@ -14,7 +14,7 @@
     background-color: var(--form_background_color);
     padding: 10px 30px;
 }
-.add_project_title {
+.project_form_header {
     font-size: 1.5rem;
     padding: 10px 0px 10px 30px;
     font-weight: 800;
@@ -41,7 +41,7 @@
 }
 .description_textarea {
     font-size: .9rem;
-    max-width: 400px;
+    resize: vertical;
 }
 
 .form_actions {

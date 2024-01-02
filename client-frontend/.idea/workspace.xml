@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="completed project list features">
-      <change afterPath="$PROJECT_DIR$/src/api/FolderApiService.js" afterDir="false" />
+    <list default="true" id="b57b6931-26c5-45e3-b619-af225c562eee" name="Changes" comment="Added folder dropdown rest api call and implemented formik field values and error handling">
+      <change afterPath="$PROJECT_DIR$/src/features/ProjectForm/components/FormikProjectForm/FormikProjectForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/ProjectForm/components/FormikProjectForm/FormikProjectForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/ProjectForm/components/PriorityDropDown/PriorityDropDown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/features/ProjectForm/components/PriorityDropDown/PriorityDropDown.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/task/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/task/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/task/TaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/ProjectApiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ProjectApiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CaptionTable/CaptionTable.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CaptionTable/CaptionTable.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowDialog/ShowDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowDialog/ShowDialog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/form/MasterInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/MasterInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/form/form.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/form.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/LeftMenu/LeftMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/LeftMenu/LeftMenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectForm/ProjectForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectForm/ProjectForm.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/ProjectForm/ProjectForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectForm/ProjectForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ProjectList/ProjectList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectList/ProjectList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/ProjectList/components/ProjectBlock/ProjectBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectList/components/ProjectBlock/ProjectBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectForm/components/PrefixReplaceField/PrefixReplaceField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectForm/components/PrefixReplaceField/PrefixReplaceField.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectForm/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectForm/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectList/ProjectList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectList/ProjectList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/ProjectList/components/ProjectBlock/ProjectBlock.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/ProjectList/components/ProjectBlock/ProjectBlock.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/css/Helper.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/css/Helper.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../rest-api-backend/src/main/java/com/rest/api/myprojects_dashboard/project/ProjectController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +59,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/msuser1/training_workspace/github_workspace/projects-dashboard/client-frontend/src/api",
+    "last_opened_file_path": "/home/msuser1/training_workspace/github_workspace/projects-dashboard/client-frontend/src/features/ProjectForm/components/FormikProjectForm",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   },
   "keyToStringList": {
@@ -57,11 +72,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/features/ProjectForm/components/FormikProjectForm" />
+      <recent name="$PROJECT_DIR$/src/features/ProjectForm/components/PriorityDropDown" />
       <recent name="$PROJECT_DIR$/src/api" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/features/Task" />
-      <recent name="$PROJECT_DIR$/src/components/CaptionTable" />
-      <recent name="$PROJECT_DIR$/src/components/form" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/features" />
@@ -70,21 +85,6 @@
       <recent name="$PROJECT_DIR$/src/containers" />
       <recent name="$PROJECT_DIR$/src/routes" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="client-frontend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="client-frontend" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -256,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704110399646</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added folder dropdown rest api call and implemented formik field values and error handling">
+      <created>1704116378206</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1704116378206</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -299,6 +306,7 @@
     <MESSAGE value="last refactored the layout and one last time is ther before that ill complete the main functions" />
     <MESSAGE value="Completed final layout of this ProjectForm.jsx and added task functionality, realigned formats" />
     <MESSAGE value="completed project list features" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed project list features" />
+    <MESSAGE value="Added folder dropdown rest api call and implemented formik field values and error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added folder dropdown rest api call and implemented formik field values and error handling" />
   </component>
 </project>

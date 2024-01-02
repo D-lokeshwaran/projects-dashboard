@@ -1,0 +1,38 @@
+:root {
+    --priority_hover_color: #f3f3f3;
+}
+
+.priority_dropdown {
+    position: relative;
+}
+.priority_selected {
+    border-radius: 50%;
+    padding: 1px 6px !important;
+    cursor: pointer;
+}
+.priority_selected:hover, .priority_selected:focus{
+    border-style: double;
+    background-color: var(--priority_hover_color);
+}
+.priorities {
+    position: absolute;
+    right: 0;
+    width: 120px;
+    border: 1px solid #CCC;
+    margin-top: 150px;
+    background: white;
+    box-shadow: 0 2px 5px #CCC;
+}
+.priority {
+    cursor: pointer;
+    padding: 6px;
+}
+.priority:hover {
+    background-color: var(--priority_hover_color);
+}
+.priority_name {
+    margin-left: 10px;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
