@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import ListActions from '../ListActions/ListActions'
 import './ProjectBlock.css'
 
-export default function ProjectBlock({project, isList}) {
+export default function ProjectBlock({project, isList, actions}) {
 
     const path = usePath();
 
@@ -37,7 +37,7 @@ export default function ProjectBlock({project, isList}) {
             <div>{project.noOfTasks}</div>
             <div>{project.status}</div>
             <div>{project.noOfBugs}</div>
-            <ListActions/>
+            <ListActions project={project} actions={actions}/>
         </Link>
     )
 }

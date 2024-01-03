@@ -39,3 +39,8 @@
     text-align: left;
     padding-top: 10px;
 }
+.noDataContent {
+    margin: 40px auto;
+    width: fit-content;
+    opacity: .6;
+}

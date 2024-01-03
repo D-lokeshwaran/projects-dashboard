@@ -13,7 +13,6 @@ const useDetectOutsideWrapper = (ref, execute) => {
             }
         }
         window.addEventListener("click", handleClickOutside);
-        console.log(ref);
     }, [ref]);
 }
 

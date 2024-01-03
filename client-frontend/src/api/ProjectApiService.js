@@ -4,7 +4,7 @@ export const retrieveAllProjectsApi =
     () => fetchApiClient('/projects').then(resp => resp.json());
 
 export const retrieveProjectApi =
-    (id) => fetchApiClient(`/projects/${id}`).then(resp => resp.json());
+    (oid) => fetchApiClient(`/projects/${oid}`).then(resp => resp.json());
 
 export const createProjectApi =
     (project) => fetchApiClient('/projects', {
@@ -14,3 +14,6 @@ export const createProjectApi =
                      },
                      body: JSON.stringify(project)
                  })
+
+export const deleteProjectApi =
+    (oid) => fetchApiClient(`/projects/${oid}`, {method: 'DELETE'})

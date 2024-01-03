@@ -7,7 +7,7 @@
     color: black
 }
 .action_cell:active, .active_dropdown {
-    background: grey;
+    background: #333333;
     color: white;
 }
 ._dropdown {
@@ -32,15 +32,21 @@
     box-shadow: 0 2px 5px #CCC;
     background: #333333;
     color: #e5efe6;
+    z-index: 10;
+    padding: 4px;
 }
 ._dropdown_content {
     cursor: pointer;
     padding: 6px;
-    margin: 4px;
+    transition: .1s;
+    border-radius: 2px;
 }
 ._dropdown_content:hover {
     background-color: var(--priority_hover_color);
-    color: black;
+    color: #333333;
+}
+.action_title {
+    font-weight: 500;
 }
 ._dropdown_content_name {
     margin-left: 10px;

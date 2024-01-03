@@ -88,6 +88,9 @@
     display: flex;
     align-items: flex-start;
 }
+.justifyCenterH {
+    justify-content: center;
+}
 .spaceBetweenH {
     justify-content: space-between;
 }
@@ -197,6 +200,12 @@
 }
 .textBoldH {
     font-weight: bold;
+}
+.darkTextH {
+    color: Grey;
+}
+.textAlignCenterH {
+    text-align: center;
 }
 .verticalTopH {
     vertical-align: top;

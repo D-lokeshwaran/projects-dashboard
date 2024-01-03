@@ -32,7 +32,7 @@ const routes = [
                                 index: true,
                                 element: <ProjectList/>
                             }, {
-                                path: ':projectName',
+                                path: ':projectId',
                                 element: <ProjectForm/>
                             }
                         ]
@@ -43,7 +43,7 @@ const routes = [
                                 index: true,
                                 element: <Visualizer/>
                             }, {
-                                path: ':projectName',
+                                path: ':projectId',
                                 element: <Visualizer/>
                             }
                         ]

@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "project")
+@Table(name = "projects")
 public class Project extends Identifiable {
 
     @Column(name = "project_name")
@@ -35,8 +35,6 @@ public class Project extends Identifiable {
     @Column(length = 600)
     private String description;
 
-    @Getter(AccessLevel.NONE)
-    @Temporal(TemporalType.DATE)
     private Date addedOn;
 
     @Enumerated(EnumType.STRING)
@@ -57,9 +55,6 @@ public class Project extends Identifiable {
     @JsonIgnore
     private List<Task> tasks;
 
-    public Date getAddedOn() {
-        return new Date();
-    }
     public Integer getNoOfTasks() {
         return tasks.size();
     }

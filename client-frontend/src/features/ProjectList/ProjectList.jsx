@@ -3,14 +3,15 @@ import { useState, useEffect } from 'react';
 import { BsStar, BsStarFill,
          BsArchive, BsArchiveFill,
          BsCapslock, BsCapslockFill,
-         BsFillGridFill } from 'react-icons/bs';
+         BsFillGridFill, BsPencilSquare, BsTrash } from 'react-icons/bs';
  import { PiListBold } from "react-icons/pi";
 import { IconBar, DropDown, SearchBar } from '../../components'
 import ProjectBlock from './components/ProjectBlock/ProjectBlock'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { usePath } from '../../shared/contexts/PathContext'
-import { retrieveAllProjectsApi } from '../../api/ProjectApiService.js'
+import { retrieveAllProjectsApi, deleteProjectApi } from '../../api/ProjectApiService.js'
 import { formatDate } from '../../utils/AppUtils'
+import { ReactComponent as NoDataSVG } from './NoDataSVG.svg'
 import './ProjectList.css'
 
 export default function ProjectList() {
@@ -19,7 +20,7 @@ export default function ProjectList() {
 
     useEffect(() => {
         refreshAndFormatProjects();
-    }, [])
+    }, [projects])
 
     async function refreshAndFormatProjects() {
         await retrieveAllProjectsApi()
@@ -41,6 +42,42 @@ export default function ProjectList() {
         const formattedProjects = projects.map(project => formatProject(project))
         return formattedProjects;
     }
+
+    const navigateTo = useNavigate();
+
+    const handleEditAction = (projectId) => {
+        if (projectId && projectId != null) {
+            navigateTo(`/dashboard/projects/${projectId}`);
+        }
+    }
+
+    const handleRemoveAction = (projectId) => {
+        if (projectId && projectId != null) {
+            try {
+                deleteProjectApi(projectId);
+                refreshAndFormatProjects();
+            } catch (error) {
+                console.log("can't delete or refresh projects", error);
+            }
+        }
+    }
+
+    const actions = {
+       edit: {
+          icon: <BsPencilSquare/>,
+          title: 'Edit',
+          handleClick: handleEditAction
+    }, favorite: {
+          icon: <BsStar/>,
+          title: 'Mark as Favorite',
+    }, archive: {
+          icon: <BsArchive/>,
+          title: 'Archive'
+    }, delete: {
+          icon: <BsTrash/>,
+          title: 'Remove',
+          handleClick: handleRemoveAction
+    }}
 
     const projectsCount = projects.length;
     const iconsSize = 16;
@@ -66,20 +103,32 @@ export default function ProjectList() {
                     </Link>
                 </div>
             </div>
-            <div className={`collection ${isList && 'displayTableH'}`}>
-                {isList &&
-                    <tr className="list_header">
-                        { headers.map(header =>
-                             <th>
-                                {header}
-                                {header && <IconBar name="view" title={`Order by name`}
-                                          sideEffort={false} checked={true} key={header}/>}
-                             </th>)
-                        }
-                    </tr>
-                }
-                { projects.map(project => <ProjectBlock project={project} isList={isList}/>) }
-            </div>
+            {projects.length > 0  ?
+                <div className={`collection ${isList && 'displayTableH'}`}>
+                    {isList &&
+                        <tr className="list_header">
+                            { headers.map(header =>
+                                 <th>
+                                    {header}
+                                    {header && <IconBar name="view" title={`Order by name`}
+                                              sideEffort={false} checked={true} key={header}/>}
+                                 </th>)
+                            }
+                        </tr>
+                    }
+                    { projects && projects.map(project =>
+                        <ProjectBlock project={project} isList={isList} actions={actions}/>)}
+                </div>
+                :  <div className="noContent_wrapper">
+                       <div className="noDataContent">
+                           <NoDataSVG height={300}/>
+                           <div className="textAlignCenterH">
+                               <h1>No Projects yet</h1>
+                               <span>Once you add Projects, they'll show up here.</span>
+                           </div>
+                       </div>
+                   </div>
+            }
         </div>
     )
 }
