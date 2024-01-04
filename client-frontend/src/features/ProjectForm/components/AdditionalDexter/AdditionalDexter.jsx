@@ -10,7 +10,7 @@ export default function AdditionalDexter(props) {
         <div tabIndex={index} key={label + index} className={`features_nav ${selectedLabel === label && 'selected_feature_nav'}`}
              onClick={() => setSelectedLabel(label)} onFocus={() => setSelectedLabel(label)}>{label}</div>
 
-    const navSections = Object.values(props).map(prop => prop['title']);
+    const navSections = Object.values(props).filter(prop => !prop.disable).map(prop => prop['title']);
 
     return(
         <div>
@@ -20,11 +20,11 @@ export default function AdditionalDexter(props) {
                 </div>
 
                 {Object.values(props).map((section) => selectedLabel === section.title &&
-                        <>
-                            <button className={`success_btnH ${section.disable && 'disabled_btn'}`} type="button" onClick={() => setShow(true)}>New</button>
-                            {show && <ShowDialog title={section.dialog.title} content={section.dialog.content} handleClose={() => setShow(false)}/>}
-                            <CaptionTable title={section.title} captions={section.captions} disable={section.disable}/>
-                        </>
+                        <div className="association_list">
+                            <button className={`success_btnH`} type="button" onClick={() => setShow(true)}>New</button>
+                            {show && <ShowDialog title={section.dialog.title} content={section.dialog.content} handleClose={(ev) => setShow(false)}/>}
+                            <CaptionTable title={section.title} captions={section.captions}/>
+                        </div>
                     )
                 }
             </div>

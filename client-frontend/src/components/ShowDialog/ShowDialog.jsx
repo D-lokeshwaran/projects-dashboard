@@ -14,9 +14,9 @@ export default function ShowDialog({title, content, handleClose}) {
         <div className="dialog_container">
             <div className="bg_blur"/>
             <div className="dialog">
-                <div className="dialog_header">
+                <div className="dialog_header alignCenterH">
                     <span className="dialog_title">{title}</span>
-                    <BsXLg className="dialog_cancel_btn" onClick={handleClose}/>
+                    <button type="button" className="overrideInputH" onClick={handleClose}><BsXLg className="dialog_cancel_btn"/></button>
                 </div>
                 <div className="dialog_form_contents">
                     {ClonedContent}

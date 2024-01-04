@@ -84,6 +84,9 @@
     display: flex;
     align-items: center;
 }
+.alignCenterH {
+    align-items: center;
+}
 .flexAlignStartH {
     display: flex;
     align-items: flex-start;

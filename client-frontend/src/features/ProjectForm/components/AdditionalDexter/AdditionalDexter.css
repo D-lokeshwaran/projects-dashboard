@@ -2,11 +2,16 @@
 .additional_features {
     width: 100%;
 }
+.features_nav_container {
+    border-bottom: 1px solid #CCC;
+    margin-top: 6px;
+}
+.association_list{
+    margin-top: 21px
+}
 .features_nav {
     color: black;
     padding: 8px 15px;
-    margin: 15px 0px;
-    border-bottom: 1px solid #CCC;
     cursor: pointer;
     transition: .3s;
 }
