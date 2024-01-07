@@ -1,27 +1,49 @@
 import './ImagePreviewField.css'
 import { useState } from 'react'
 import { InputWrapper, MasterInput, defaultFieldStyle } from '../../../../components'
-import { BsFillTrashFill } from "react-icons/bs";
+import { BsUpload, BsTrash } from "react-icons/bs";
 
-export default function ImagePreviewField({ profile, setProfile, ...props }) {
+export default function ImagePreviewField({ ...props }) {
+
+    const[profile, setProfile] = useState(null);
 
     const handleImagePreview = (event) => {
+        const file = event.target.files[0];
         var reader = new FileReader();
         reader.onload = function(event) {
-            setProfile(reader.result);
+            var size = 0;
+            if(file.size < 1000000) {
+                size = Math.floor(file.size/1000) + 'KB';
+            } else {
+                size = Math.floor(file.size/1000000) + 'MB';
+            }
+            setProfile({src: reader.result, name: file.name, size: size});
         }
-        reader.readAsDataURL(event.target.files[0]);
+        reader.readAsDataURL(file);
     }
 
     return (
-        <InputWrapper label="Profile" required={true}>
-            <label className={`${defaultFieldStyle} profile_label`} for={`${profile == null && 'profile'}`} tabIndex="0">
-                {profile == null ? <div>Drop your profile</div>
-                  : <img src={profile} className="preview" height="100" alt="Profile Preview"/>
-                }
-            </label>
-            {profile && <BsFillTrashFill className="profile_edit"/>}
-            <MasterInput type="file" id="profile" hidden accept="image/*" name="profile" onChange={handleImagePreview}/>
+        <InputWrapper label="Profile" wrapperClass="widthFullH">
+            {profile == null ?
+                <label className="profile_fileUpload flexAlignCenterH justifyCenterH">
+                    <BsUpload/>
+                    <span className="drag_text ml10H">
+                        Drop profile here or <b className="dark_text">Browse profile</b>
+                    </span>
+                    <input type="file" hidden onChange={handleImagePreview} accept="image/*"/>
+                </label>
+            :   <div className="preview_container flexAlignCenterH spaceBetweenH">
+                    <div className="flexAlignCenterH">
+                        <img src={profile.src} className="preview" alt="Profile Preview"/>
+                        <div className="profile_info ml20H">
+                            <p>{profile.name}</p>
+                            <small>{profile.size}</small>
+                        </div>
+                    </div>
+                    <BsTrash className="profile_trash" onClick={() => setProfile(null)}
+                            title="Remove the profile"/>
+                </div>
+            }
         </InputWrapper>
     )
 }

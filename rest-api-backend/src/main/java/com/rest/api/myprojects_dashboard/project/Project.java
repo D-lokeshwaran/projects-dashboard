@@ -51,7 +51,7 @@ public class Project extends Identifiable {
     @Transient
     private Integer noOfBugs;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", orphanRemoval = true)
     @JsonIgnore
     private List<Task> tasks;
 

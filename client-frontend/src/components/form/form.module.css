@@ -19,6 +19,8 @@
 .fieldset_label {
     font-weight: 500;
     font-size: .9rem;
+    color: #3b3b3b;
+    margin-bottom: 5px;
 }
 .field {
     width: 100%;
@@ -29,7 +31,6 @@
     font-size: 1rem;
     background: white;
     transition: border .2s ease-in;
-    margin: 5px 0px;
     transition: all .2s;
 }
 .field:focus-visible {

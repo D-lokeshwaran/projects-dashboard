@@ -84,8 +84,19 @@
     display: flex;
     align-items: center;
 }
+.flexAlignTopH {
+    display: flex;
+    align-items: baseline;
+}
+.flexAlignBaseLineH{
+    display: flex;
+    align-items: baseline;
+}
 .alignCenterH {
     align-items: center;
+}
+.alignBaseLineH {
+    align-items: baseline;
 }
 .flexAlignStartH {
     display: flex;
@@ -168,7 +179,7 @@
     font-weight: 500;
     border: none;
 }
-.success_btnH:hover {
+.success_btnH:hover, small_success_btnH:hover  {
     background-color: #1e8449;
     transform: translateY(0);
     transition-duration: .35s;
@@ -234,6 +245,8 @@
 .overrideLinkH {
     color: currentColor; /*this currentColor is a variable which contains current clr value...*/
     text-decoration: none;
+    font-size: inherit;
+    font-weight: inherit;
 }
 .listHeaderH {
     width: 100%;

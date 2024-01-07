@@ -4,48 +4,48 @@
     --form_padding:  0 30px;
 }
 
-.project_form_module {
-    border-radius: 5px;
-}
-.project_form_container {
-    width: 100%;
-}
-.hov_formik_container{
+.project_header {
     background-color: var(--form_background_color);
     padding: 10px 30px;
-}
-.project_form_header {
-    font-size: 1.5rem;
-    padding: 10px 0px 10px 30px;
-    font-weight: 800;
-    border-bottom: 1px solid #CCC;
-}
-.project_details {
-    padding: var(--form_padding);
-    position: relative;
-    width: calc(100% - 27%);
-}
-/* --------------------------- */
-.field_dropdown {
-    border-radius: var(--border_r_five_px);
     width: 100%;
-    font-size: .9rem;
+    box-shadow: 0 0 6px #CCC;
+    /*position: sticky;
+    top: 46px;*/
 }
-.project_form_actions {
-    border-top: 1px solid black;
-    display: flex;
-    padding-top: 10px;
+.form_group {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 10px;
+    width: 49.2%;
+    box-shadow: 0 3px 5px #CCC;
 }
-.fitContent {
-    width: fit-content;
+@media only screen and (max-width: 1120px) {
+  .form_group {
+     width: 48%;
+  }
+}
+.basic_info_container {
+    float: left;
+}
+.advance_info_container {
+    margin-left: 10px;
+    float: right;
+}
+.additional_features_container {
+    padding: 20px;
+    margin: 10px 0 0 10px;
+    float: right;
+}
+.subtitle {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #929292;
+    margin-left: 10px
+}
+.form_contents {
+    margin: 10px;
 }
 .description_textarea {
     font-size: .9rem;
     resize: vertical;
-}
-
-.form_actions {
-    margin: 20px 0 0 0;
-    padding: 10px 30px;
-    border-top: 1px solid #CCC;
 }

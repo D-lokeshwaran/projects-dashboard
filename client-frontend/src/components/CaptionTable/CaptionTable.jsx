@@ -15,11 +15,15 @@ export default function CaptionTable({ title, captions, disable}) {
         <div className="captions_table_wrapper">
             <div className={`displayTableWFullH ${disable && 'caption_disabled'} captions_table`}>
                 <tr className="listHeaderH">
-                    {Object.keys(captions[0]).map((header, index) =>
+                    {captions[0] && Object.keys(captions[0]).map((header, index) =>
                         <th className={`caption_header ptb10H ${index == 0 && 'pl10H'}`}>{index == 0 ? '' : header}</th>)}
                 </tr>
                 <tbody>
-                    {captions && captions.map(cap => <Caption {...cap} disable={disable}/>) }
+                    {captions && captions.map(cap =>  {
+                        delete cap.project;
+                        delete cap.oid;
+                        return <Caption {...cap} disable={disable}/>
+                    }) }
                 </tbody>
             </div>
         </div>

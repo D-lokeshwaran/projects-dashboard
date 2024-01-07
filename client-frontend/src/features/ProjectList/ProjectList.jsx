@@ -20,7 +20,7 @@ export default function ProjectList() {
 
     useEffect(() => {
         refreshAndFormatProjects();
-    }, [projects])
+    }, [])
 
     async function refreshAndFormatProjects() {
         await retrieveAllProjectsApi()
@@ -53,12 +53,9 @@ export default function ProjectList() {
 
     const handleRemoveAction = (projectId) => {
         if (projectId && projectId != null) {
-            try {
-                deleteProjectApi(projectId);
-                refreshAndFormatProjects();
-            } catch (error) {
-                console.log("can't delete or refresh projects", error);
-            }
+            deleteProjectApi(projectId)
+                .then(success => refreshAndFormatProjects())
+                .catch(error => console.log("can't delete or refresh projects", error));
         }
     }
 
@@ -116,7 +113,7 @@ export default function ProjectList() {
                             }
                         </tr>
                     }
-                    { projects && projects.map(project =>
+                    { projects.map(project =>
                         <ProjectBlock project={project} isList={isList} actions={actions}/>)}
                 </div>
                 :  <div className="noContent_wrapper">

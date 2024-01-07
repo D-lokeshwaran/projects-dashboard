@@ -1,6 +1,7 @@
 import './AdditionalDexter.css'
 import { useState } from 'react'
 import { CaptionTable, ShowDialog  } from '../../../../components'
+import { BsPlus } from 'react-icons/bs'
 
 export default function AdditionalDexter(props) {
     const [show, setShow] = useState(false);
@@ -14,20 +15,19 @@ export default function AdditionalDexter(props) {
 
     return(
         <div>
-            <div className="dummy_wrapper additional_features">
-                <div className="features_nav_container flexAlignStartH">
+            <div className="sections_header flexAlignTopH spaceBetweenH">
+                <div className="features_nav_container widthFullH flexAlignStartH spaceBetweenH">
                     { navSections.map((section, i) => <NavBar label={section} key={i}/>) }
                 </div>
-
-                {Object.values(props).map((section) => selectedLabel === section.title &&
-                        <div className="association_list">
-                            <button className={`success_btnH`} type="button" onClick={() => setShow(true)}>New</button>
-                            {show && <ShowDialog title={section.dialog.title} content={section.dialog.content} handleClose={(ev) => setShow(false)}/>}
-                            <CaptionTable title={section.title} captions={section.captions}/>
-                        </div>
-                    )
-                }
+                <button className="success_btnH" type="button" onClick={() => setShow(true)}>New</button>
             </div>
+            {Object.values(props).map((section) => selectedLabel === section.title &&
+                    <div className="association_list">
+                        {show && <ShowDialog title={section.dialog.title} content={section.dialog.content} handleClose={(ev) => setShow(false)}/>}
+                        <CaptionTable title={section.title} captions={section.captions}/>
+                    </div>
+                )
+            }
         </div>
     )
 }
